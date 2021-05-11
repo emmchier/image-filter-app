@@ -8,10 +8,12 @@ import {
   } from "react-router-dom";
   
 import { HomeScreen } from '../pages/HomeScreen';
+import { Navbar } from '../ui/components/Navbar';
 
 export const AppRouter = () => {
     return (
         <Router>
+            <Navbar />
             <Switch>
                 <Route exact path="/" component={ HomeScreen } />
                 <Redirect to="/" />

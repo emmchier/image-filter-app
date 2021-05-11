@@ -5,6 +5,9 @@ import './styles/main.scss';
 
 export const ImageFilterApp = () => {
     return (
-        <AppRouter />
+        <div className="main">
+            <AppRouter />
+        </div>
+        
     )
 }
