@@ -7,7 +7,7 @@ import {
     Redirect
   } from "react-router-dom";
   
-import { HomeScreen } from '../pages/HomeScreen';
+import { DashboardScreen } from '../pages/DashboardScreen';
 import { Navbar } from '../ui/components/Navbar';
 
 export const AppRouter = () => {
@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path="/" component={ HomeScreen } />
+                <Route exact path="/" component={ DashboardScreen } />
                 <Redirect to="/" />
             </Switch>
         </Router>
