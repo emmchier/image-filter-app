@@ -49,6 +49,7 @@ export const DashboardScreen = () => {
                                     sat: 0, // saturation 
                                     shad: 0, // shadow (0 to 100)
                                     sharp: 0, // (0 to 100) (NO USE)
+                              
                                     usm: 25, // use with usmrad (NO USE ALONE)
                                     usmrad: 0, // usm:25 + usmrad: 0 to 500 - mask effect
                                     vib: 0, // intensity
@@ -61,15 +62,54 @@ export const DashboardScreen = () => {
                                     // borders
                                     pad: '', // 0 to 500. default = ''(slider)
                                     'pad-left': '', // 0 to 500. default = ''. (select component)
-                                    
+                                    'pad-right': '', // 0 to 500. default = ''. (select component)
+                                    'pad-top': '', // 0 to 500. default = ''. (select component)
+                                    'pad-bottom': '', // 0 to 500. default = ''. (select component)
                                     // shapes
-                                    mask: 'corners', // forms (ellipse, width & height most be same) | corners
+                                    mask: '', // forms (ellipse, width & height most be same) | corners
+                                    "corner-radius": "",
+                                    // hexagon = https://assets.imgix.net/gearbox/hexagon.png 
+                                    // gradient hexagon = https://assets.imgix.net/gearbox/hexagon-gradient.png
+                                    // inverted hezagon = https://assets.imgix.net/gearbox/hexagon-inverted.png
                                   
                                     // background
                                     bg: '#00', // background color. default transparent= #00 (select color component)
 
+                                    // size
+                                    fit: '', // size effects (select)
+                                    //default = clip
+                                    //clamp(elastizado), 
+                                    //clip(se ajusta), 
+                                    //crop(mantiene sizes), 
+                                    //facearea(simil crop) 
+                                    //fill(simil clip)
+                                    //fillmax(simil clip)
+                                    //max(max width)
+                                    //min(min width)
+                                    //scale(adjust at width)
+
+                                    // style effects
+                                    blur: 0, // borroso 0 a 100 (slider)
+                                    px: 0, // pixelado 0 a 100 (slider)
+                                    monochrome:'', // monocromía. default '' (select color component)
+                                    sepia: 0, // sepias 0 a 100 (slider)
+
+                                    // text
+                                    txt: 'HOLA', // form
+                                    "txt-align": 'middle, right', // top, bottom, left. right, middle (checkboxs)
+                                    "txt-pad": 0, // text padding 0 to 500 (slider). mayor control de posicionamiento
+                                    "txt-clip": 'end, ellipsis', // los "...", start los pone al comienzo (grid with icons)
+                                    //funciona cuando el texto se sale de la caja. Tenerlo siempre activoen todo lo de text
+                                    "txt-color": '#000000', // (select color)
+                                    "txt-fit": '', // default: max,  none o ''. Ajusta el texto al máximo (checkbox)
+                                    "txt-font": 'Arial,Bold', // getFonts list (select)
+                                    "txt-size": 100, // 0 a 500 (slider)
+                                    "txt-line": 0, // border letter (slider + form) 0 a 40
+                                    "txt-line-color": '', // border letter color (select color)
+                                    "txt-shad": 0, // text shadow 0 to 10 (slider)
+                                    
                                 }}
-                                width={ myWidth }
+                                width={ 600 }
                                 height={ 600 }
                             />
                         )}
