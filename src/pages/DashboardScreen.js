@@ -87,20 +87,26 @@ export const DashboardScreen = () => {
             txt: value
         });
     }
-  
+
     const source = (url, params) => {
         const stringUrl = buildURL(url, params);
         return stringUrl;
     }
 
-    const [historyList, setHistoryList] = useState([]);
+    const handleChangeParams = ( key ) => {
+        const thisParams = historyList[key].params;
+        setNewParams( thisParams );
+    }
+
+    const [ historyList, setHistoryList ] = useState([]);
 
     const handleAddItem = () => {
-        setNewParams( params );
         const historyItem = historyList.concat({
            params 
         });
-        setHistoryList(historyItem);
+        setHistoryList( historyItem );
+        setNewParams( params );
+
     }
     console.log(historyList);
     
@@ -121,7 +127,11 @@ export const DashboardScreen = () => {
                                     <li 
                                         key={key}
                                         {...item}>
-                                            item
+                                            <button 
+                                                className="btn btn-primary" 
+                                                onClick={ ()=> handleChangeParams( key ) }>
+                                                    {key} ITEM
+                                            </button>
                                     </li>
                                 )
                                 
