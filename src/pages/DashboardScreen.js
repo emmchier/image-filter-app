@@ -19,7 +19,7 @@ export const DashboardScreen = () => {
         resetAll,
         resetHistory
     } = useReset( setParams, setHistoryList );
-    
+
     // add btn
     const handleAddItem = () => {
         const historyItem = historyList.concat({
@@ -37,14 +37,13 @@ export const DashboardScreen = () => {
     
     return (
 
-       
          <div className="container">
             <div className="row">
                 
                 <div className="col-sm col-md-2">
                     <button 
                         className="btn btn-primary" 
-                        onClick={ ()=> resetHistory() }>
+                        onClick={ resetHistory }>
                             CLEAR
                     </button>
                     <ul>
@@ -75,7 +74,7 @@ export const DashboardScreen = () => {
                 <div className="col-sm col-md-4">
                     <div className="options-header alignX">
                         <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
-                        <button className="btn btn-outline-primary" onClick={ ()=> resetAll() }>Reset all values</button>
+                        <button className="btn btn-outline-primary" onClick={ resetAll }>Reset all values</button>
                     </div>
 
                 <MenuOptions params={ params } setParams={ setParams }  />

@@ -7,17 +7,19 @@ import { MenuOptionHeader } from './MenuOptionHeader';
 import SelectComponent from './SelectComponent';
 import { SliderComponent } from './SliderComponent';
 
+import InvertIcon from './../../../assets/invert.svg';
+
 export const MenuOptions = ({ params, setParams }) => {
 
     const { 
         iluminationList, 
         colorList,
         sizeList
-    } = useGetList(params, setParams);
+    } = useGetList( params, setParams);
 
     const {
         resetAdjustments
-    } = useReset( params, setParams );
+    } = useReset( setParams );
 
     return (
         <div className="dashboard__menu-options">
@@ -27,7 +29,7 @@ export const MenuOptions = ({ params, setParams }) => {
                     <button 
                         className="btn btn-primary" 
                         onClick={ ()=> 
-                            setParams( resetAdjustments ) }>
+                            resetAdjustments() }>
                             Reset Adjustments
                     </button>
                     
@@ -80,7 +82,18 @@ export const MenuOptions = ({ params, setParams }) => {
                 <SelectComponent selectList={ sizeList } />
 
                 <h6 class="card-subtitle text-muted"> Orientation </h6>
-           
+
+                    <div className="invert-container alignX">
+                        <h4>Invert</h4>
+                        <button 
+                            className="btn-invert btn btn-primary" 
+                            onClick={ ()=> 
+                                setParams( { ...params, flip: 'h' } ) }>
+                                <img src={ InvertIcon } alt={ 'show invert icon' } />
+                        </button>
+                    </div>
+                   
+
                 </div>
             </div>
         </div>

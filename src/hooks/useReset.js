@@ -1,6 +1,6 @@
 import { useGlobalState } from "./useGlobalState";
 
-export const useReset =  ( params, setParams, setHistoryList ) => {
+export const useReset =  ( setParams, setHistoryList ) => {
 
     const globalState = useGlobalState();
 
@@ -15,7 +15,7 @@ export const useReset =  ( params, setParams, setHistoryList ) => {
 
     const resetAdjustments = () => {
         setParams({
-            ...params,
+            ...globalState,
             con: 0,
             bri: 0,
             exp: 0, 
