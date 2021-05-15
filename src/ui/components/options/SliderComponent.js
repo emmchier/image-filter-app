@@ -10,7 +10,8 @@ export const SliderComponent = ( props ) => {
     min, 
     max, 
     onChange, 
-    onChangeCommitted
+    onChangeCommitted,
+    onClick
   } = props;
 
   return (
@@ -26,6 +27,9 @@ export const SliderComponent = ( props ) => {
             onChangeCommitted={ onChangeCommitted }
             valueLabelDisplay="auto"
         />
+        <i 
+          className="material-icons"
+          onClick={ onClick }>restart_alt</i>
     </div>
   )
 }

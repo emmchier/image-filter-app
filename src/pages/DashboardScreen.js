@@ -2,20 +2,18 @@ import React, { useState } from 'react';
 
 import { ImageGallery } from '../ui/components/gallery/ImageGallery';
 import { MenuOptions } from '../ui/components/options/MenuOptions';
-import { SliderComponent } from '../ui/components/options/SliderComponent';
-
 
 export const DashboardScreen = () => {
 
     // dashboard
-    const [ params, setParams] = useState({
+    const [ params, setParams ] = useState({
         // adjustment (all sliders -100 to 100. 0 default)
 
           // ADJUST LIGHT
           con: 0, // constrast LIGHT
           bri: 0, // brigtness LIGHT
           exp: 0, // exposure= light LIGHT
-          high: 100, // opacitiy ( -100 to 0) LIGHT
+          high: 0, // opacitiy ( -100 to 0) LIGHT
           vib: 0, // intensity
           // ADJUST COLOR
           hue: 0, // filter color (0 to 359)
@@ -85,6 +83,48 @@ export const DashboardScreen = () => {
         "txt-shad": 0, // text shadow 0 to 10 (slider)
     });
 
+    const handleResetAll = () => {
+        setParams({
+            con: 0,
+            bri: 0,
+            exp: 0, 
+            high: 1, 
+            vib: 0, 
+            hue: 0, 
+            sat: 0,
+            gam: 0, 
+            fit: '',
+            flip: '', 
+            orient: 0,
+            rot: 0,
+            invert: false,
+            shad: 0, 
+            blur: 0, 
+            px: 0, 
+            monochrome:'',
+            sepia: 0, 
+            mask: '', 
+            "corner-radius": "",
+            pad: '',
+            'pad-left': '',
+            'pad-right': '', 
+            'pad-top': '', 
+            'pad-bottom': '', 
+            bg: '#00',
+            txt: '',
+            "txt-align": 'top, left',
+            "txt-pad": 10,
+            "txt-clip": 'end, ellipsis',
+            "txt-color": '#000000',
+            "txt-fit": '',
+            "txt-font": 'Arial',
+            "txt-size": 16, 
+            "txt-line": 0, 
+            "txt-line-color": '', 
+            "txt-shad": 0, 
+        })
+    }
+
     // history
     const [ historyList, setHistoryList ] = useState([]);
     // add btn
@@ -145,53 +185,13 @@ export const DashboardScreen = () => {
 
                 </div>
                 <div className="col-sm col-md-4">
-                <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
+                    <div className="options-header alignX">
+                        <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
+                        <button className="btn btn-outline-primary" onClick={ ()=> handleResetAll() }>Reset all values</button>
+                    </div>
 
                 <MenuOptions params={ params } setParams={ setParams } />
-                {/* <div className="dashboard__menu-options">
-                    <div className="card">
-                        <div className="card-body">
-                            <div className="alignX">
-                                <h5 className="card-title">Adjust</h5>
-                                <i className="material-icons">help</i>
-                            </div>
-                            
-                            <h6 class="card-subtitle mb-2 text-muted">Customize your image</h6>
-                            
-                            <SliderComponent
-                                sliderTitle={ 'Brigtness' }
-                                value={params.bri}
-                                onChange={(e, value) =>
-                                    setParams({ ...params, bri: value})}
-                                onChangeCommitted={ ()=> 
-                                    setParams({ ...params, bri: params.bri })}
-                                min={0}
-                                max={100}
-                            />
-                            <SliderComponent
-                                sliderTitle={ 'Contrast' }
-                                value={params.con}
-                                onChange={(e, value) =>
-                                    setParams({ ...params, con: value})}
-                                onChangeCommitted={ ()=> 
-                                    setParams({ ...params, con: params.con })}
-                                min={0}
-                                max={100}
-                            />
-                            <SliderComponent
-                                sliderTitle={ 'Exposure' }
-                                value={params.exp}
-                                onChange={(e, value) =>
-                                    setParams({ ...params, exp: value})}
-                                onChangeCommitted={ ()=> 
-                                    setParams({ ...params, exp: params.exp })}
-                                min={0}
-                                max={100}
-                            />
-                        
-                        </div>
-                    </div>
-                </div> */}
+               
                 </div>
             </div>
         </div>
