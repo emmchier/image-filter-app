@@ -4,6 +4,7 @@
     background-color: #FFFFFF;
     border: 1px solid transparent;
     @include getShadow;
+    color: #000000;
 
     &:hover {
         background-color: #ebe8e8;
@@ -13,5 +14,22 @@
     img {
         height: 20px;
         margin: 4px 0;
+    }
+
+    .btn-invert-left {
+        transform: rotate(180deg);
+    }
+    .btn-invert-bottom {
+        transform: rotate(90deg);
+    }
+    .btn-invert-top {
+        transform: rotate(270deg);
+    }
+}
+
+.rotate-container {
+    .col-md-6 {
+        padding: 0;
+        width: auto !important;
     }
 }

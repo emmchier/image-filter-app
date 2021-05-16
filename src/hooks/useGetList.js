@@ -142,11 +142,113 @@ export const useGetList = ( params, setParams ) => {
         }
     ];
 
+    const invertList = [
+        { 
+            classes: 'btn-invert-right', 
+            onClick: ()=> setParams( { ...params, flip: 'h' } ),
+            orientIcon: 'trending_flat' 
+        },
+        { 
+            classes: 'btn-invert-left', 
+            onClick: ()=> setParams( { ...params, flip: '' } ),
+            orientIcon: 'trending_flat' 
+        },
+        { 
+            classes: 'btn-invert-bottom', 
+            onClick: ()=> setParams( { ...params, flip: 'v' } ),
+            orientIcon: 'trending_flat' 
+        },
+        { 
+            classes: 'btn-invert-top', 
+            onClick: ()=> setParams( { ...params, flip: '' } ),
+            orientIcon: 'trending_flat' 
+        }
+    ];
+
+    const effectList = [
+        {
+            sliderTitle: 'Shadow',
+            value: params.shad,
+            onChange: (e, value) =>
+                setParams({ ...params, shad: value}),
+            onChangeCommitted: ()=> 
+                setParams({ ...params, shad: params.shad }),
+            onClick: ()=> { setParams({ ...params, shad: 0 }) },
+            min: 0,
+            max: 100
+        },
+        {
+            sliderTitle: 'Blur',
+            value: params.blur,
+            onChange: (e, value) =>
+                setParams({ ...params, blur: value}),
+            onChangeCommitted: ()=> 
+                setParams({ ...params, blur: params.blur }),
+            onClick: ()=> { setParams({ ...params, blur: 0 }) },
+            min: 0,
+            max: 100
+        },
+        {
+            sliderTitle: 'Pixels',
+            value: params.px,
+            onChange: (e, value) =>
+                setParams({ ...params, px: value}),
+            onChangeCommitted: ()=> 
+                setParams({ ...params, px: params.px }),
+            onClick: ()=> { setParams({ ...params, px: 0 }) },
+            min: 0,
+            max: 100
+        },
+        {
+            sliderTitle: 'Sepia',
+            value: params.sepia,
+            onChange: (e, value) =>
+                setParams({ ...params, sepia: value}),
+            onChangeCommitted: ()=> 
+                setParams({ ...params, sepia: params.sepia }),
+            onClick: ()=> { setParams({ ...params, sepia: 0 }) },
+            min: 0,
+            max: 100
+        }
+    ];
+
+    const shapeList = [
+        {
+            shapeIcon: 'Shadow',
+            shapeName: 'Rounded Corners',
+            onClick: ()=> { setParams({ ...params, mask: "corners" }) }
+        },
+        {
+            shapeIcon: 'Shadow',
+            shapeName: 'Ellipse',
+            onClick: ()=> { setParams({ ...params, mask: "ellipse" }) }
+        },
+        {
+            shapeIcon: 'Shadow',
+            shapeName: 'Hexagon',
+            onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon.png" }) }
+        },
+        {
+            shapeIcon: 'Shadow',
+            shapeName: 'Gradient Hexagon',
+            onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon-gradient.png" }) }
+        },
+        {
+            shapeIcon: 'Shadow',
+            shapeName: 'Inverted Hexagon',
+            onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon-inverted.png" }) }
+        }
+    ];
+
+   
     
     return {
         iluminationList,
         colorList,
-        sizeList
+        sizeList,
+        invertList,
+        effectList,
+        shapeList
     }
    
 }
