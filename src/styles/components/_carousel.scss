@@ -1,0 +1,109 @@
+.swiper-container {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .swiper-wrapper {
+      height: 50vh !important;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .swiperNav {
+    height: 80%;
+    width: 100%;
+  }
+
+  .swiperDisplay {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .swiperNav .swiper-slide {
+    width: 25%;
+    height: 70px;
+    max-height: 70px;
+    opacity: 0.4;
+    overflow: hidden;
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+
+  .swiperNav .swiper-slide-thumb-active {
+    opacity: 1;
+    cursor: none !important;
+  }
+
+  .swiper-button-next, 
+  .swiper-button-prev {
+    background-image: none !important;
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondaryColor;
+
+    &:hover {
+      color: $primaryColor;
+    }
+}
+
+  @media #{$mobile} {
+
+    .detail__bottom-actions {
+      margin-bottom: 3rem !important;
+    }
+
+    .detail__bottom-actions.alignX,
+    .detail__bottom-actions.alignX a {
+      display: block !important;
+    }
+
+    .detail__bottom-actions.alignX a {
+      margin: 25px 0;
+    }
+
+    span {
+      display: none;
+    }
+    
+  }
