@@ -1,8 +1,94 @@
 // Main styles 
-html, body {
-  margin: 0;
-  padding: 0;
+@import './theme'; 
+
+@mixin borderBox($border-box) {
+  -webkit-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  box-sizing: $border-box;
 }
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include borderBox(border-box);
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  main {
+    width: 100%;
+  }
+
+  section {
+      height: 100vh;
+  }
+  
+  img {
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    width: 100%;
+    height: 60vh !important;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* oculto borde selected bootstrap de todos los componentes */
+  *:focus,
+  button:focus,
+  .form-control:focus {
+    outline: none !important;
+    outline: 0 !important;
+    outline: hidden !important;
+    box-shadow: none !important;
+  }
+
+  .overlay {
+    background-color: $overlay;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99999 !important;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    display: flex;
+
+    .loading-item {
+      background-color: $primaryColor;
+      color: $primaryColor;
+      z-index: 9999;
+    }
+  }
+
+  
+
+ 
+
+  
 .main {
     padding-top: 80px;
 }
