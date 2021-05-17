@@ -2,7 +2,6 @@ export const useGlobalState = () => {
 
     return {
         // adjustment (all sliders -100 to 100. 0 default)
-
           // ADJUST LIGHT
           con: 0, // constrast LIGHT
           bri: 0, // brigtness LIGHT
@@ -15,7 +14,7 @@ export const useGlobalState = () => {
           gam: 0, // gamma brigtness in same color LIGHT
 
         // ADJUST SIZE
-        fit: 'clip', // size effects (select)
+        fit: 'max', // size effects (select)
         //default = clip
         //clamp(elastizado), 
         //clip(se ajusta), 

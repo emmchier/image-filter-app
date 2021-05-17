@@ -1,0 +1,35 @@
+.upload {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid $secondaryLightColor;
+    margin: 20px 0;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    .image-icon {
+        color: $secondaryDarkColor;
+        font-size: 8rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+   
+}
+
+.btn-upload {
+    margin-top: 1rem;
+    width: 50% !important;
+
+    .pushAside {
+        display: none !important; 
+        justify-content: none !important;
+        margin: 0 !important;
+        
+    }
+
+    i {
+        font-size: 25px;
+    }
+}

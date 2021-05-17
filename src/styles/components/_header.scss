@@ -1,0 +1,27 @@
+
+
+.tab-header {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    .brand {
+        img {
+            width: 50px;
+        }
+    }
+
+    .btn-tab {
+        margin: 00 10px !important;
+        padding: 10px 50px;
+        background-color: $whiteColor;
+        color: $primaryColor;
+    
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $primaryColorTranslucent !important;
+            color: $primaryColor !important;
+        }
+    }
+}

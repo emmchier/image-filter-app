@@ -3,9 +3,11 @@
 @import './base/theme';
 @import './base/acuarel';
 @import './base/media-queries';
+@import './base/customs';
 
 // components
 
 @import'./components/menu-options';
 @import'./components/carousel';
-@import'./components/image-gallery';
+@import'./components/header';
+@import'./components/upload';

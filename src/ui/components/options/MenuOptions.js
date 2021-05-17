@@ -1,249 +1,80 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { useGetList } from '../../../hooks/useGetList';
-import { useReset } from '../../../hooks/useReset';
-import { BtnOrient } from './BtnOrient';
-import ColorPickerComponent from './ColorPickerComponent';
-import { createColor } from "material-ui-color";
-
-import { MenuOptionHeader } from './MenuOptionHeader';
-import SelectComponent from './SelectComponent';
-import { SliderComponent } from './SliderComponent';
-import SwitchComponent from './SwitchComponent';
-import { ShapeIcon } from './ShapeIcon';
-import { BorderItem } from './BorderItem';
+import { Adjustments } from './sections/Adjustments';
+import { Effects } from './sections/Effects';
+import { Shapes } from './sections/Shapes';
+import { Borders } from './sections/Borders';
 
 export const MenuOptions = ({ params, setParams }) => {
 
-    const { 
-        iluminationList, 
-        colorList,
-        sizeList,
-        invertList,
-        effectList,
-        shapeList
-    } = useGetList( params, setParams);
-
-    const [color, setColor] = useState(createColor("#000"));
-
-    const handleColorReset = () => {
-        setParams({ ...params, monochrome: '' });
-        setColor('#000');
-    }
-
-    const [colorBorder, setColorBorder] = useState(createColor("#000"));
-
-    const handleBgReset = () => {
-        setParams({ ...params, bg: '' });
-        setColorBorder('#000');
-    }
-
     return (
         <div className="dashboard__menu-options">
-            <div className="card">
-                <div className="card-body">
-                    
-                    <MenuOptionHeader
-                        headerTitle={ 'Adjustments' }
-                        tooltipDesc={ 'Adjust the lights, colors, sizes and orientation of your images. See examples in our sandbox and play with it' }
-                        tooltipOrient={ 'top' }
-                    />
-                    
-                    <h6 class="card-subtitle text-muted"> Ilumination </h6>
+            <div class="accordion" id="accordionExample">
 
-                    {
-                        iluminationList.map( (adjust, key) => {
-                            return(
-                                <SliderComponent
-                                    key={key}
-                                    sliderTitle={ adjust.sliderTitle }
-                                    value={adjust.value}
-                                    onChange={adjust.onChange}
-                                    onChangeCommitted={ adjust.onChangeCommitted}
-                                    onClick={ adjust.onClick}
-                                    min={adjust.min}
-                                    max={adjust.max}
-                                />
-                            )
-                        })
-                    }
-
-                <h6 class="card-subtitle text-muted"> Color </h6>
-
-                {
-                        colorList.map( (adjust, key) => {
-                            return(
-                                <SliderComponent
-                                    key={key}
-                                    sliderTitle={ adjust.sliderTitle }
-                                    value={adjust.value}
-                                    onChange={adjust.onChange}
-                                    onChangeCommitted={ adjust.onChangeCommitted}
-                                    onClick={ adjust.onClick}
-                                    min={adjust.min}
-                                    max={adjust.max}
-                                />
-                            )
-                        })
-                    }
- 
-                <h6 class="card-subtitle text-muted"> Size </h6>
-
-                <SelectComponent selectList={ sizeList } />
-
-                <h6 class="card-subtitle text-muted"> Orientation </h6>
-
-                    <div className="invert-container alignX">
-                        <h6> Invert </h6>
-                        {
-                            invertList.map( (invert, key)=> {
-                                return (
-                                    <BtnOrient
-                                        key={ key }
-                                        classes={ invert.classes }
-                                        onClick={ invert.onClick }
-                                        orientIcon={ invert.orientIcon }
-                                    />
-                                )
-                            })
-                        }
-                    </div>
-
-                    <div className="rotate-container">
-                        <SliderComponent
-                            sliderTitle={ 'Rotate' }
-                            value={ params.rot }
-                            onChange={ (e, value) =>
-                                setParams({ ...params, rot: value}) }
-                            onChangeCommitted={ ()=> 
-                                setParams({ ...params, rot: params.rot }) }
-                            onClick={ ()=> { setParams({ ...params, rot: 0 }) } }
-                            min={0}
-                            max={359}
-                        />
-                    </div>
-
-
-                </div>
-            </div>
-
-            {/* Effects */}
-
-            <div className="card">
-                <div className="card-body">
-
-                    <MenuOptionHeader
-                        headerTitle={ 'Add Effects' }
-                        tooltipDesc={ 'Adjust the lights, colors, sizes and orientation of your images. See examples in our sandbox and play with it' }
-                        tooltipOrient={ 'top' }
-                    />
-
-
-                    {
-                        effectList.map( (adjust, key) => {
-                            return(
-                                <SliderComponent
-                                    key={key}
-                                    sliderTitle={ adjust.sliderTitle }
-                                    value={adjust.value}
-                                    onChange={adjust.onChange}
-                                    onChangeCommitted={ adjust.onChangeCommitted}
-                                    onClick={ adjust.onClick}
-                                    min={adjust.min}
-                                    max={adjust.max}
-                                />
-                            )
-                        })
-                    }
-
-                    <SwitchComponent 
-                        label={ 'Negative' }
-                        onChange={(e, value) =>
-                            setParams({ ...params, invert: value})} />
-
-                    <div className="monochome-container">
-                        <h6>Monochrome</h6>
-                        <ColorPickerComponent 
-                            setParams={setParams} 
-                            color={ color }
-                            setColor={ setColor }
-                            paramsValue={{ ...params, monochrome: `#${color.hex}` }}
-                            onClick={ ()=> handleColorReset()  }
-                        />
-                    </div>
-
-                </div> 
-            </div>
-
-            {/* Shapes */}
-
-            <div className="card">
-                <div className="card-body">
-                    
-                    <div className="alignX">
-                        <MenuOptionHeader
-                            headerTitle={ 'Add Shapes' }
-                            tooltipDesc={ 'Adjust the lights, colors, sizes and orientation of your images. See examples in our sandbox and play with it' }
-                            tooltipOrient={ 'top' }
-                        />
-                        <button 
-                            className="btn btn-primary" 
-                            onClick={ ()=> { setParams({ ...params, mask: "" }) } }>
-                                <i className="material-icons">restart_alt</i>
+                {/* Adjustments */}
+                <div class="card">
+                    <div class="card-header" id="adjustments">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        Adjustments
                         </button>
+                    </h2>
                     </div>
-                   
-                    {
-                        shapeList.map( (shape, key) => {
-                            return(
-                                <ShapeIcon
-                                    key={key}
-                                    shapeIcon={ shape.shapeIcon }
-                                    shapeName={ shape.shapeName }
-                                    onClick={ shape.onClick}
-                                />
-                            )
-                        })
-                    }
+                    <div id="collapse1" class="collapse show" aria-labelledby="adjustments" data-parent="#accordionExample">
+                    <div class="card-body">         
+                        <Adjustments params={ params } setParams={ setParams } />
+                    </div>
+                    </div>
+                </div>
 
+                {/* Effects */}
+                <div class="card">
+                    <div class="card-header" id="effects">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        Effects
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="effects" data-parent="#accordionExample">
+                    <div class="card-body">         
+                        <Effects params={ params } setParams={ setParams } />
+                    </div>
+                    </div>
+                </div>
+
+                {/* Shapes */}
+                <div class="card">
+                    <div class="card-header" id="shapes">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        Shapes
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="shapes" data-parent="#accordionExample">
+                    <div class="card-body">         
+                        <Shapes params={ params } setParams={ setParams } />
+                    </div>
+                    </div>
+                </div>
+
+                {/* Borders */}
+                <div class="card">
+                    <div class="card-header" id="borders">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        Borders
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapse4" class="collapse" aria-labelledby="borders" data-parent="#accordionExample">
+                    <div class="card-body">         
+                        <Borders params={ params } setParams={ setParams } />
+                    </div>
+                    </div>
+                </div>
                 
-
-                </div>
-            </div>
-
-            {/* Borders */}
-
-            <div className="card">
-                <div className="card-body">
-                    
-                    <MenuOptionHeader
-                        headerTitle={ 'Add Borders' }
-                        tooltipDesc={ 'Adjust the lights, colors, sizes and orientation of your images. See examples in our sandbox and play with it' }
-                        tooltipOrient={ 'top' }
-                    />
-
-                    <h6>Border Color</h6>
-                    <ColorPickerComponent 
-                        setParams={setParams} 
-                        color={ colorBorder }
-                        setColor={ setColorBorder }
-                        paramsValue={{ ...params, bg: `#${colorBorder.hex}` }}
-                        onClick={ ()=> handleBgReset()  }
-                    />
-
-                    <h6>Border Size</h6>
-                    <SliderComponent
-                        value={params.pad}
-                        onChange= {(e, value) =>
-                            setParams({ ...params, pad: value}) }
-                        onChangeCommitted={ ()=> 
-                            setParams({ ...params, pad: params.pad }) }
-                        onClick={ ()=> { setParams({ ...params, pad: '' }) } }
-                        min={0}
-                        max={100}
-                    />
-  
-                </div>
             </div>
         </div>
     )

@@ -221,7 +221,7 @@ export const useGetList = ( params, setParams ) => {
         {
             shapeIcon: 'Shadow',
             shapeName: 'Ellipse',
-            onClick: ()=> { setParams({ ...params, mask: "ellipse" }) }
+            onClick: ()=> { setParams({ ...params, mask: "ellipse", fit:'fill', w:50, h:50  }) }
         },
         {
             shapeIcon: 'Shadow',

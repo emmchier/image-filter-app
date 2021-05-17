@@ -1,0 +1,37 @@
+@import './theme';
+@import './media-queries';
+
+.custom-btn {
+  font-size: 16px;
+  background-color: $primaryColor;
+  border: none;
+  color: $whiteColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transition: 0.3s ease-in-out;
+    background-color: $primaryColor;
+    color: $whiteColor;
+  }
+
+  &.hover-active:hover {
+    background-color: $primaryDarkColor;
+    transition: 0.3s ease-in-out;
+    color: $whiteColor;
+  }
+}
+
+  // media queries
+@media #{$mobile} {
+
+  .custom-btn {
+  
+    &:hover,
+    &:active,
+    &:focus,
+    &.hover-active:hover {
+      background-color: $primaryColor;
+    }
+  }
+}

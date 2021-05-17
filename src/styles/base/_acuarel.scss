@@ -62,6 +62,11 @@
       justify-content: space-between !important;
       margin-left: auto !important;
   }
+
+  .disabled {
+    opacity: .2 !important;
+    cursor: inherit !important;
+  }
   
   .centerMiddle {
     display: -webkit-box;

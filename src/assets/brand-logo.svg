@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="135" viewBox="0 0 134 135">
+  <g id="Group_2" data-name="Group 2" transform="translate(-246 -387)">
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(246 402)" fill="#fff" stroke="#c9f943" stroke-width="5">
+      <rect width="56" height="56" rx="11" stroke="none"/>
+      <rect x="2.5" y="2.5" width="51" height="51" rx="8.5" fill="none"/>
+    </g>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="71" height="71" rx="11" transform="translate(309 387)" fill="#3ce9c6"/>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="40" height="39" rx="6" transform="translate(262 466)" fill="#db7ec8"/>
+    <rect id="Rectangle_6" data-name="Rectangle 6" width="40" height="39" rx="6" transform="translate(317 413)" fill="#fff"/>
+    <g id="Path_3" data-name="Path 3" transform="translate(309 466)" fill="#fff">
+      <path d="M 45 52 L 11 52 C 7.140188694000244 52 4 48.85980987548828 4 45 L 4 11 C 4 7.140188694000244 7.140188694000244 4 11 4 L 45 4 C 48.85980987548828 4 52 7.140188694000244 52 11 L 52 45 C 52 48.85980987548828 48.85980987548828 52 45 52 Z" stroke="none"/>
+      <path d="M 11 8 C 9.345798492431641 8 8 9.345798492431641 8 11 L 8 45 C 8 46.65419769287109 9.345798492431641 48 11 48 L 45 48 C 46.65419769287109 48 48 46.65419769287109 48 45 L 48 11 C 48 9.345798492431641 46.65419769287109 8 45 8 L 11 8 M 11 0 L 45 0 C 51.07513809204102 0 56 4.924861907958984 56 11 L 56 45 C 56 51.07513809204102 51.07513809204102 56 45 56 L 11 56 C 4.924861907958984 56 0 51.07513809204102 0 45 L 0 11 C 0 4.924861907958984 4.924861907958984 0 11 0 Z" stroke="none" fill="#f6995c"/>
+    </g>
+  </g>
+</svg>

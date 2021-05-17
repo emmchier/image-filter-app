@@ -3,6 +3,8 @@ import { useGlobalState } from '../hooks/useGlobalState';
 
 import { useReset } from '../hooks/useReset';
 import { ImageGallery } from '../ui/components/gallery/ImageGallery';
+import { Header } from '../ui/components/header/Header';
+import { HistoryComponent } from '../ui/components/history/HistoryComponent';
 import { MenuOptions } from '../ui/components/options/MenuOptions';
 
 export const DashboardScreen = () => {
@@ -16,8 +18,7 @@ export const DashboardScreen = () => {
     const [ historyList, setHistoryList ] = useState([]);
 
     const {
-        resetAll,
-        resetHistory
+        resetAll
     } = useReset( setParams, setHistoryList );
 
     // add btn
@@ -29,48 +30,30 @@ export const DashboardScreen = () => {
     }
     console.log(historyList);
 
-     
-    const handleChangeParams = ( key ) => {
-       const thisParams = historyList[key].params;
-       setParams( thisParams );
-   }
+
+   const [ visibility, setVisibility ] = useState(true);
     
     return (
 
          <div className="container">
             <div className="row">
                 
-                <div className="col-sm col-md-2">
-                    <button 
-                        className="btn btn-primary" 
-                        onClick={ resetHistory }>
-                            CLEAR
-                    </button>
-                    <ul>
-                        {
-                            historyList.map( (item, key) => {
-                                return (
-                                    <li 
-                                        key={key}
-                                        {...item}>
-                                            <button 
-                                                className="btn btn-primary alignX" 
-                                                onClick={ ()=> handleChangeParams( key ) }>
-                                                    {key} ITEM 
-                                                    
-                                            </button>
-                                    </li>
-                                )
-                                
-                            })
-                        }
-                    </ul>
+                <div className="col-sm col-md-8">
+                    <Header visibility={ visibility } setVisibility={ setVisibility } />
+                    <div className="row">
+                        <div className="col-sm col-md-3">
+                            <HistoryComponent
+                                setParams={ setParams }
+                                setHistoryList={ setHistoryList }
+                                historyList={ historyList }
+                            />
+                        </div>
+                        <div className="col-sm col-md-9">
+                            <ImageGallery params={ params } visibility={ visibility } />
+                        </div>
+                    </div>
                 </div>
-                <div className="col-sm col-md-6">
-
-                   <ImageGallery params={ params } />
-
-                </div>
+                
                 <div className="col-sm col-md-4">
                     <div className="options-header alignX">
                         <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
