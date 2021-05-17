@@ -11,22 +11,31 @@ import SwiperCore, {
 } from 'swiper/core';
 
 import Imgix, { buildURL } from 'react-imgix';
+import { CustomBtn } from '../customs/CustomBtn';
+import { getImageByURL } from '../../../actions/downloadImage';
 
 SwiperCore.use([Navigation,Thumbs]);
 
 export const CarouselComponent = ({ gallery, newParams }) => {
   
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [ thumbsSwiper, setThumbsSwiper ] = useState(null);
 
-  //const [urlStr, setUrlStr] = useState();
+  const [ stringUrl, setStringUrl ] = useState('');
 
-  const getUrlString = (url, params) => {
-    const urlString = buildURL( url, params);
-    return urlString;
+  const getURL = url => buildURL( url, newParams );
+
+  const copyUrl = url => 
+    navigator.clipboard.writeText( getURL( url ) );
+  
+  const openInBrowser = url => {
+    const urlSt = getURL( url );
+    const newStringUrl = urlSt.substr(8);
+    setStringUrl( newStringUrl );
   }
 
-  console.log(getUrlString);
-
+  const downloadImage = ( url, name ) => 
+    getImageByURL( getURL( url ), name );
+  
     return (
       <>
       <Swiper 
@@ -44,13 +53,33 @@ export const CarouselComponent = ({ gallery, newParams }) => {
                   return(
                     <SwiperSlide
                         key={ key }>
-                        <Imgix
-                            src={ getUrlString( img.url, newParams) }
-                         
-                            key={key}
-                            width={ 400 }
-                            height={ 400 }
-                        />
+                          <div className="sandbox-item">
+                            <Imgix
+                                src={ getURL( img.url ) }
+                                key={key}
+                            />
+                            <div className="sandbox-item-actions alignX">
+                              <CustomBtn
+                                btnTitle={ 'Open in browser' }
+                                classes={ 'btn-open-browser' }
+                                onClick={()=> openInBrowser( img.url ) }
+                                to={ `//${stringUrl}` }
+                                btnTarget={ '_blank' }
+                              />
+                               <CustomBtn
+                                btnTitle={ 'Copy URL' }
+                                classes={ 'btn-copy-url' }
+                                onClick={ () => copyUrl( img.url ) }
+                              />
+                               <CustomBtn
+                                btnTitle={ 'Download Image' }
+                                classes={ 'btn-download' }
+                                onClick={ ()=> downloadImage( img.url, img.name ) }
+                              />
+                            </div>
+          
+                           
+                          </div>
                     </SwiperSlide>
                   )
               })

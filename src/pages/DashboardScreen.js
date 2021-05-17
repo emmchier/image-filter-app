@@ -3,6 +3,7 @@ import Scrollbars from 'react-custom-scrollbars';
 import { useGlobalState } from '../hooks/useGlobalState';
 
 import { useReset } from '../hooks/useReset';
+import { CustomBtn } from '../ui/components/customs/CustomBtn';
 import { ImageGallery } from '../ui/components/gallery/ImageGallery';
 import { Header } from '../ui/components/header/Header';
 import { HistoryComponent } from '../ui/components/history/HistoryComponent';
@@ -39,7 +40,9 @@ export const DashboardScreen = () => {
             <div className="row">
                 
                 <div className="col-sm col-md-8">
+
                     <Header visibility={ visibility } setVisibility={ setVisibility } />
+
                     <div className="row">
                         <div className="col-sm col-md-3">
         
@@ -57,9 +60,20 @@ export const DashboardScreen = () => {
                 </div>
                 
                 <div className="col-sm col-md-4">
-                    <div className="options-header alignX">
-                        <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
-                        <button className="btn btn-outline-primary" onClick={ resetAll }>Reset all values</button>
+                    <div className="options-header alignX pushAside">
+                            <CustomBtn 
+                                onClick={ ()=> handleAddItem() }
+                                btnTitle={ 'Save Changes' }
+                                classes={ 'btn-save' }
+                            />
+                            <CustomBtn 
+                                onClick={ resetAll }
+                                btnTitle={ 'Reset all' }
+                                classes={ 'btn-reset-all' }
+                                isIconVisible={ true }
+                                btnIcon={ 'restart_alt' }
+                            />
+        
                     </div>
               
                     <MenuOptions params={ params } setParams={ setParams }  />

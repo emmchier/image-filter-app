@@ -3,7 +3,6 @@ import React from 'react';
 import { useGetList } from '../../../../hooks/useGetList';
 
 import { BtnOrient } from '../BtnOrient';
-import { MenuOptionHeader } from '../MenuOptionHeader';
 import SelectComponent from '../SelectComponent';
 import { SliderComponent } from '../SliderComponent';
 

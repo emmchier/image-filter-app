@@ -4,6 +4,56 @@
     padding-right: 3px;
 }
 
+.options-header {
+    margin-bottom: 10px;
+}
+
+.btn-reset-all {
+    color: $secondaryTextColor !important;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+    background-color: $whiteColor;
+
+    .btn-icon {
+        font-size: 20px;
+        transform: translateY(5px);
+        margin-left: 5px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: underline !important;
+        background-color: $whiteColor !important;
+    }
+}
+
+.btn-save {
+    font-size: .8rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: $primaryColorTranslucent;
+    line-height: 10px !important;
+    color: $secondaryColor !important;
+
+    &:hover {
+        background-color: $primaryColorTranslucentDark !important;
+        color: $secondaryColor !important;
+    }
+
+    &:active,
+    &:focus {
+        background-color: $primaryColorTranslucent !important;
+        color: $secondaryColor !important;
+    }
+}
+
+.section-menu .card-header h2 {
+    text-transform: initial !important;
+    color: $secondaryColor;
+}
+
 .btn-invert {
     width: auto;
     height: auto;

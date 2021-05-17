@@ -13,7 +13,8 @@ export const CustomBtn = ( props ) => {
         btnIcon, 
         isIconVisible, 
         isIconLeftVisible,
-        btnType
+        btnType,
+        btnTarget
     } = props;
     
     const [hover, setHover] = useState(true);
@@ -28,7 +29,8 @@ export const CustomBtn = ( props ) => {
             onMouseEnter={() => { setHover( isHover ) }}
             onClick={ onClick }
             to={ to }
-            type={ btnType }>
+            type={ btnType }
+            target={ btnTarget }>
             { isIconLeftVisible && <i className="material-icons btn-icon"> { btnIcon } </i> }
             { btnTitle }
             { isIconVisible && <i className="material-icons btn-icon"> { btnIcon } </i> }

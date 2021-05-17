@@ -42,7 +42,11 @@
             margin-right: 5px;
         }
 
-        &:hover,
+        &:hover {
+            background-color: $primaryColorTranslucentDark !important;
+            color: $secondaryColor !important;
+        }
+        
         &:active,
         &:focus {
             background-color: $primaryColorTranslucent !important;

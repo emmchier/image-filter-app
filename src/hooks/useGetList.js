@@ -240,6 +240,37 @@ export const useGetList = ( params, setParams ) => {
         }
     ];
 
+    const sectionList = [
+        { 
+            type: 'adjustment',
+            headerName: 'Adjustments',
+            collapseId: 'collapse1',
+            showClass: 'show',
+            ariaExpanded: 'true'
+        },
+        { 
+            type: 'effects',
+            headerName: 'Effects',
+            collapseId: 'collapse2',
+            showClass: '',
+            ariaExpanded: 'false'
+        },
+        { 
+            type: 'shapes',
+            headerName: 'Shapes',
+            collapseId: 'collapse3',
+            showClass: '',
+            ariaExpanded: 'false'
+        },
+        { 
+            type: 'borders',
+            headerName: 'Borders',
+            collapseId: 'collapse4',
+            showClass: '',
+            ariaExpanded: 'false'
+        }
+    ];
+
    
     
     return {
@@ -248,7 +279,8 @@ export const useGetList = ( params, setParams ) => {
         sizeList,
         invertList,
         effectList,
-        shapeList
+        shapeList,
+        sectionList
     }
    
 }
