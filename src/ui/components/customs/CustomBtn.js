@@ -12,6 +12,7 @@ export const CustomBtn = ( props ) => {
         to, 
         btnIcon, 
         isIconVisible, 
+        isIconLeftVisible,
         btnType
     } = props;
     
@@ -28,6 +29,7 @@ export const CustomBtn = ( props ) => {
             onClick={ onClick }
             to={ to }
             type={ btnType }>
+            { isIconLeftVisible && <i className="material-icons btn-icon"> { btnIcon } </i> }
             { btnTitle }
             { isIconVisible && <i className="material-icons btn-icon"> { btnIcon } </i> }
         </Link>

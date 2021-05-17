@@ -16,10 +16,7 @@ html, body {
     @include borderBox(border-box);
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    overflow-x: hidden !important;
+    overflow: hidden;
   }
   
   main {
@@ -111,3 +108,7 @@ html, body {
     overflow: hidden;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
+
+
+
+  

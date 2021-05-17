@@ -99,3 +99,27 @@
   .no-bg {
     background: transparent !important;
   }
+
+  // custom scrollbars
+
+  /* Let's get this party started */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+   
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: $primaryColorTranslucent; 
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: $primaryColorTranslucent; 
+  }

@@ -146,22 +146,22 @@ export const useGetList = ( params, setParams ) => {
         { 
             classes: 'btn-invert-right', 
             onClick: ()=> setParams( { ...params, flip: 'h' } ),
-            orientIcon: 'trending_flat' 
+            orientIcon: 'arrow_right' 
         },
         { 
             classes: 'btn-invert-left', 
             onClick: ()=> setParams( { ...params, flip: '' } ),
-            orientIcon: 'trending_flat' 
+            orientIcon: 'arrow_right' 
         },
         { 
             classes: 'btn-invert-bottom', 
             onClick: ()=> setParams( { ...params, flip: 'v' } ),
-            orientIcon: 'trending_flat' 
+            orientIcon: 'arrow_right' 
         },
         { 
             classes: 'btn-invert-top', 
             onClick: ()=> setParams( { ...params, flip: '' } ),
-            orientIcon: 'trending_flat' 
+            orientIcon: 'arrow_right' 
         }
     ];
 

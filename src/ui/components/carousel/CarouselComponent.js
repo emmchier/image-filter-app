@@ -18,13 +18,21 @@ export const CarouselComponent = ({ gallery, newParams }) => {
   
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    console.log(gallery);
+  //const [urlStr, setUrlStr] = useState();
+
+  const getUrlString = (url, params) => {
+    const urlString = buildURL( url, params);
+    return urlString;
+  }
+
+  console.log(getUrlString);
+
     return (
       <>
       <Swiper 
         style={{
           '--swiper-navigation-size': 
-          '30px'
+          '10px'
         }} 
         loop={true} 
         spaceBetween={10} 
@@ -37,7 +45,8 @@ export const CarouselComponent = ({ gallery, newParams }) => {
                     <SwiperSlide
                         key={ key }>
                         <Imgix
-                            src={ buildURL( img.url, newParams) }
+                            src={ getUrlString( img.url, newParams) }
+                         
                             key={key}
                             width={ 400 }
                             height={ 400 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Scrollbars from 'react-custom-scrollbars';
 import { useGlobalState } from '../hooks/useGlobalState';
 
 import { useReset } from '../hooks/useReset';
@@ -17,9 +18,7 @@ export const DashboardScreen = () => {
     // history
     const [ historyList, setHistoryList ] = useState([]);
 
-    const {
-        resetAll
-    } = useReset( setParams, setHistoryList );
+    const { resetAll } = useReset( setParams, setHistoryList );
 
     // add btn
     const handleAddItem = () => {
@@ -29,6 +28,7 @@ export const DashboardScreen = () => {
         setHistoryList( historyItem );
     }
     console.log(historyList);
+
 
 
    const [ visibility, setVisibility ] = useState(true);
@@ -42,11 +42,13 @@ export const DashboardScreen = () => {
                     <Header visibility={ visibility } setVisibility={ setVisibility } />
                     <div className="row">
                         <div className="col-sm col-md-3">
+        
                             <HistoryComponent
                                 setParams={ setParams }
                                 setHistoryList={ setHistoryList }
                                 historyList={ historyList }
                             />
+                  
                         </div>
                         <div className="col-sm col-md-9">
                             <ImageGallery params={ params } visibility={ visibility } />
@@ -59,11 +61,9 @@ export const DashboardScreen = () => {
                         <button className="btn btn-primary" onClick={ ()=> handleAddItem() }>Save</button>
                         <button className="btn btn-outline-primary" onClick={ resetAll }>Reset all values</button>
                     </div>
-
-                <MenuOptions params={ params } setParams={ setParams }  />
-                      
-                
-               
+              
+                    <MenuOptions params={ params } setParams={ setParams }  />
+ 
                 </div>
             </div>
         </div>

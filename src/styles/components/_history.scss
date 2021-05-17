@@ -25,6 +25,32 @@
     
 }
 
+.history-content {
+    overflow-y: scroll !important;
+    padding-right: 10px;
+    height: 75vh;
+    max-height: 75vh;
+
+    .item-history {
+        font-size: .8rem;
+        background-color: $primaryColorTranslucent;
+        color: $secondaryColor;
+        margin-bottom: 5px;
+        
+        .btn-icon {
+            font-size: .8rem;
+            margin-right: 5px;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $primaryColorTranslucent !important;
+            color: $secondaryColor !important;
+        }
+    }
+}
+
 .empty-history {
     background-color: $secondaryTranslucentColor;
     border-radius: 5px;

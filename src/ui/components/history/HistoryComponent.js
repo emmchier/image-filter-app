@@ -29,14 +29,14 @@ export const HistoryComponent = (props) => {
                         ? "btn-reset-history no-bg" 
                         : "btn-reset-history no-bg disabled"} 
                     onClick={ resetHistory }
-                    btnTitle={ 'Reset' }
+                    btnTitle={ 'Clear' }
                 />
             </div>
             
             {
                 historyList.length > 0
                 ?
-                <ul>
+                <ul className="history-content">
                     {
                         historyList.map( (item, key) => {
                             return (
@@ -45,9 +45,11 @@ export const HistoryComponent = (props) => {
                                     {...item}
                                     className="animate__animated animate__fadeIn">
                                         <CustomBtn
-                                            classes={ 'alignX' } 
+                                            classes={ 'item-history alignX' } 
                                             onClick={ ()=> handleChangeParams( key ) }
-                                            btnTitle={ `Change Group ${key + 1}` }
+                                            btnTitle={ `Group ${key + 1}` }
+                                            isIconLeftVisible={ true }
+                                            btnIcon={ 'palette' }
                                         />
                                 </li>
                             )
