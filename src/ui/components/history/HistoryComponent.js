@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useReset } from '../../../hooks/useReset';
+import { CustomBtn } from '../customs/CustomBtn';
 
 export const HistoryComponent = (props) => {
 
@@ -9,8 +10,6 @@ export const HistoryComponent = (props) => {
         setHistoryList,
         historyList
     } = props;
-
-    const [ visibility, setVisibility ] = useState(false);
 
     const { resetHistory } = useReset( setParams, setHistoryList );
 
@@ -21,31 +20,47 @@ export const HistoryComponent = (props) => {
 
     return (
         <>
-            <button 
-                className={ historyList.length > 0 ? "btn btn-primary" : "btn btn-primary disabled"} 
-                onClick={ resetHistory }>
-                    CLEAR
-            </button>
+            <div className="history-header alignX pushAside">
+                <h2>History</h2>
 
-            <ul>
-                {
-                    historyList.map( (item, key) => {
-                        return (
-                            <li 
-                                key={key}
-                                {...item}>
-                                    <button 
-                                        className="btn btn-primary alignX" 
-                                        onClick={ ()=> handleChangeParams( key ) }>
-                                            {key} ITEM 
-                                            
-                                    </button>
-                            </li>
-                        )
-                        
-                    })
-                }
-            </ul>
+                <CustomBtn
+                    classes={ 
+                        historyList.length > 0 
+                        ? "btn-reset-history no-bg" 
+                        : "btn-reset-history no-bg disabled"} 
+                    onClick={ resetHistory }
+                    btnTitle={ 'Reset' }
+                />
+            </div>
+            
+            {
+                historyList.length > 0
+                ?
+                <ul>
+                    {
+                        historyList.map( (item, key) => {
+                            return (
+                                <li 
+                                    key={key}
+                                    {...item}
+                                    className="animate__animated animate__fadeIn">
+                                        <CustomBtn
+                                            classes={ 'alignX' } 
+                                            onClick={ ()=> handleChangeParams( key ) }
+                                            btnTitle={ `Change Group ${key + 1}` }
+                                        />
+                                </li>
+                            )
+                            
+                        })
+                    }
+                </ul>
+                :
+                <div className="empty-history animate__animated animate__fadeIn">
+                    <p>Your history of saved changes will appear here</p>
+                </div>
+            }
+            
         </>
     )
 }

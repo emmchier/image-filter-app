@@ -1,0 +1,42 @@
+.history-header {
+
+    h2 {
+        font-size: .8rem;
+        padding: 8px 15px;
+        border-radius: 5px;
+        background-color: $primaryColorTranslucent;
+        line-height: 10px !important;
+    }
+
+    .btn-reset-history {
+        color: $secondaryTextColor !important;
+        font-size: .8rem;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-3px);
+    
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline !important;
+        }
+    }
+
+    
+}
+
+.empty-history {
+    background-color: $secondaryTranslucentColor;
+    border-radius: 5px;
+    padding: 10px;
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: .7rem;
+        color: $secondaryTextColor;
+    }
+}
+
+
+

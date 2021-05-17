@@ -1,27 +1,36 @@
-
-
-.tab-header {
+ .tab-header {
     width: 100%;
 
     margin-bottom: 20px;
 
     .brand {
+        color: $secondaryColor !important;
+        font-weight: 600;
+        font-size: 1.2rem;
+        justify-content: center !important;
+        
         img {
-            width: 50px;
+            width: 30px;
+            margin-right: 10px;
         }
     }
 
     .btn-tab {
-        margin: 00 10px !important;
-        padding: 10px 50px;
+        justify-content: center !important;
         background-color: $whiteColor;
-        color: $primaryColor;
+        color: $secondaryColor;
     
         &:hover,
         &:focus,
         &:active {
+            background-color: $primaryColorTranslucentHover !important;
+            color: $secondaryColor !important;
+        }
+
+        &.active,
+        &.active:hover {
             background-color: $primaryColorTranslucent !important;
-            color: $primaryColor !important;
+            color: $secondaryColor !important;
         }
     }
 }

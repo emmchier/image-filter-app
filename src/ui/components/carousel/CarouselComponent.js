@@ -26,7 +26,7 @@ export const CarouselComponent = ({ gallery, newParams }) => {
           '--swiper-navigation-size': 
           '30px'
         }} 
-        loop={false} 
+        loop={true} 
         spaceBetween={10} 
         navigation={true} 
         thumbs={{ swiper: thumbsSwiper }} 
