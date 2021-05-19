@@ -30,6 +30,7 @@ export const HistoryComponent = (props) => {
                         : "btn-reset-history btnText disabled"} 
                     onClick={ resetHistory }
                     btnTitle={ 'Clear' }
+                    to={ '/#' }
                 />
 
             </div>
@@ -52,6 +53,7 @@ export const HistoryComponent = (props) => {
                                             btnTitle={ `Group ${key + 1}` }
                                             isIconLeftVisible={ true }
                                             btnIcon={ 'palette' }
+                                            to={ '/#' }
                                         />
                                         
                                 </li>

@@ -15,7 +15,7 @@ export const Adjustments = ({ params, setParams }) => {
     return (
         <div id="options__adjustments">
             <div className="adjustment-content">
-                <h6 class="card-subtitle ilum"> Ilumination </h6>
+                <h6 className="card-subtitle ilum"> Ilumination </h6>
 
                 {
                     iluminationList.map( ( adjust, key ) => {
@@ -35,7 +35,7 @@ export const Adjustments = ({ params, setParams }) => {
                     })
                 }
 
-                <h6 class="card-subtitle"> Color </h6>
+                <h6 className="card-subtitle"> Color </h6>
 
                 {
                     colorList.map( (adjust, key) => {
@@ -55,7 +55,7 @@ export const Adjustments = ({ params, setParams }) => {
                     })
                 }
  
-                <h6 class="card-subtitle text-muted"> Orientation </h6>
+                <h6 className="card-subtitle text-muted"> Orientation </h6>
                     <div className="invert-container alignX">
                         <h6> Invert </h6>
                             {

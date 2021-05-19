@@ -16,6 +16,7 @@ export const Shapes = ({ params, setParams }) => {
                     onClick={ ()=> { setParams({ ...params, mask: "" }) } }
                     btnTitle={ 'Reset' }
                     classes={ 'btn-reset-all btn-reset-shapes btnText' }
+                    to={ '/#' }
                 />
             
                 {

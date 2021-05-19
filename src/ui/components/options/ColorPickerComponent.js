@@ -19,10 +19,12 @@ export default function ColorPickerComponent( props ) {
 
   return (
       <div className="alignX">
+
         <ColorPicker 
           value={color} 
           onChange={ handleChange }
-          aria-label="#000" />
+        />
+
         <div className="btnFAB btn-reset">
           <i 
             className="material-icons reset-icon"

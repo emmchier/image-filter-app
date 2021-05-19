@@ -11,11 +11,13 @@ export const BtnOrient = ( props ) => {
     } = props;
 
     return (
+        
         <CustomBtn
             classes={ `btn-invert btnFAB ${ classes }`} 
             onClick={ onClick }
             isIconVisible={ true }
             btnIcon={ orientIcon }
+            to={ '/#' }
         />
     )
 }

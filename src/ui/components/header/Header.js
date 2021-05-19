@@ -30,6 +30,7 @@ export const Header = ({ visibility, setVisibility }) => {
                                     visibility 
                                     ? 'btn-tab btnOutline pushAside active' 
                                     : 'btn-tab btnOutline pushAside' }
+                                to={ '/#' }
                             />
 
                         </div>
@@ -42,6 +43,7 @@ export const Header = ({ visibility, setVisibility }) => {
                                     !visibility 
                                     ? 'btn-tab btnOutline active pushAside' 
                                     : 'btn-tab btnOutline pushAside' }
+                                to={ '/#' }
                             />
 
                         </div>

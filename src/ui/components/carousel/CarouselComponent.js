@@ -74,12 +74,14 @@ export const CarouselComponent = ({ gallery, newParams }) => {
                       btnTitle={ 'Copy URL' }
                       classes={ 'btn-action btnOutline' }
                       onClick={ () => copyUrl( img.url ) }
+                      to={ '/#' }
                     />
 
                     <CustomBtn
                       btnTitle={ 'Download Image' }
                       classes={ 'btn-action btnOutline' }
                       onClick={ ()=> downloadImage( img.url, img.name ) }
+                      to={ '/#' }
                     />
 
                   </div>

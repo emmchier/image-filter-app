@@ -20,10 +20,10 @@ export const Effects = ({ params, setParams }) => {
     return (
         <div id="options__effects">
             <div className="effects-content">
-
                 {
                     effectList.map( ( adjust, key ) => {
-                        return(
+                        return ( 
+
                             <SliderComponent
                                 key={key}
                                 sliderTitle={ adjust.sliderTitle }
@@ -45,6 +45,7 @@ export const Effects = ({ params, setParams }) => {
 
                 <div className="monochome-container alignX">
                     <h6>Monochrome</h6>
+                    
                     <ColorPickerComponent 
                         setParams={setParams} 
                         color={ color }

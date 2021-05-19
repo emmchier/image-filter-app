@@ -59,6 +59,7 @@ export const DashboardScreen = () => {
                                 onClick={ ()=> handleAddItem() }
                                 btnTitle={ 'Save Changes' }
                                 classes={ 'btn-save btnNormal' }
+                                to={ '/#' }
                             />
 
                             <CustomBtn 
@@ -67,6 +68,7 @@ export const DashboardScreen = () => {
                                 classes={ 'btn-reset-all btnText' }
                                 isIconVisible={ true }
                                 btnIcon={ 'restart_alt' }
+                                to={ '/#' }
                             />
         
                     </div>

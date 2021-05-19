@@ -14,7 +14,6 @@ export const getImageList = async() => {
                 name: list.name
             }
         });
-        console.log(imageList);
         return imageList;
         
      } catch (error) {

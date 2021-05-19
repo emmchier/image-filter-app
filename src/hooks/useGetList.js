@@ -97,54 +97,6 @@ export const useGetList = ( params, setParams ) => {
         }
     ];
 
-    const sizeList = [
-        {
-            itemName: 'Default',
-            value: '',
-            onClick: ()=> { setParams({ ...params, fit: 'clip' }) }
-        },
-        {
-            itemName: 'Clamp',
-            value: 10,
-            onClick: ()=> { setParams({ ...params, fit: 'clamp' }) }
-        },
-        {
-            itemName: 'Crop',
-            value: 20,
-            onClick: ()=> { setParams({ ...params, fit: 'crop' }) }
-        },
-        {
-            itemName: 'Facearea',
-            value: 30,
-            onClick: ()=> { setParams({ ...params, fit: 'facearea' }) }
-        },
-        {
-            itemName: 'Fill',
-            value: 40,
-            onClick: ()=> { setParams({ ...params, fit: 'fill' }) }
-        },
-        {
-            itemName: 'Fillmax',
-            value: 50,
-            onClick: ()=> { setParams({ ...params, fit: 'fillmax' }) }
-        },
-        {
-            itemName: 'Max',
-            value: 60,
-            onClick: ()=> { setParams({ ...params, fit: 'max' }) }
-        },
-        {
-            itemName: 'Min',
-            value: 70,
-            onClick: ()=> { setParams({ ...params, fit: 'min' }) }
-        },
-        {
-            itemName: 'Scale',
-            value: 80,
-            onClick: ()=> { setParams({ ...params, fit: 'scale' }) }
-        }
-    ];
-
     const invertList = [
         { 
             classes: 'btn-invert-right', 
@@ -274,12 +226,9 @@ export const useGetList = ( params, setParams ) => {
         }
     ];
 
-   
-    
     return {
         iluminationList,
         colorList,
-        sizeList,
         invertList,
         effectList,
         shapeList,

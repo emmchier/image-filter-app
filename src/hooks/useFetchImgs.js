@@ -10,7 +10,6 @@ export const useFetchImgs = () => {
         data: [],
         loading: true
     });
-    console.log(state);
  
     useEffect(() => {
         getImageList()

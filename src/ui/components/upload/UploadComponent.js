@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Imgix, { buildURL } from 'react-imgix';
 import { uploadImage } from '../../../actions/uploadImage';
 import { CustomBtn } from '../customs/CustomBtn';
-import { LoadingComponent } from '../LoadingComponent';
 
 export const UploadComponent = ({ newParams }) => {
 
@@ -61,6 +60,7 @@ export const UploadComponent = ({ newParams }) => {
                 classes={ 'btn-upload btnNormal' }
                 btnIcon={ 'file_upload' }
                 isIconVisible={true}
+                to={ '/#' }
             />
         </>
     )

@@ -17,7 +17,6 @@ export const Borders = ({ params, setParams }) => {
 
         <div id="options__borders">
             <div className="borders-content">
-                
                 <div className="alignX">
                     <h6>Border Color</h6>
 
