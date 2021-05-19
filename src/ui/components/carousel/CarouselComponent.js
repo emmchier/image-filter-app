@@ -54,29 +54,33 @@ export const CarouselComponent = ({ gallery, newParams }) => {
                     <SwiperSlide
                         key={ key }>
                           <div className="sandbox-item">
-                            <Imgix
-                                src={ getURL( img.url ) }
-                                key={key}
-                            />
-                            <div className="sandbox-item-actions alignX">
+                          <div className="sandbox-item-actions alignX">
                               <CustomBtn
                                 btnTitle={ 'Open in browser' }
-                                classes={ 'btn-open-browser' }
+                                classes={ 'btn-action btnOutline' }
                                 onClick={()=> openInBrowser( img.url ) }
                                 to={ `//${stringUrl}` }
                                 btnTarget={ '_blank' }
                               />
                                <CustomBtn
                                 btnTitle={ 'Copy URL' }
-                                classes={ 'btn-copy-url' }
+                                classes={ 'btn-action btnOutline' }
                                 onClick={ () => copyUrl( img.url ) }
                               />
                                <CustomBtn
                                 btnTitle={ 'Download Image' }
-                                classes={ 'btn-download' }
+                                classes={ 'btn-action btnOutline' }
                                 onClick={ ()=> downloadImage( img.url, img.name ) }
                               />
                             </div>
+                            <div className="image-item">
+                            <Imgix
+                                src={ getURL( img.url ) }
+                                key={key}
+                            />
+                            </div>
+                            
+                            
           
                            
                           </div>

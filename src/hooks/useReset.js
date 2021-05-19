@@ -9,7 +9,7 @@ export const useReset =  ( setParams, setHistoryList ) => {
     }
 
     const resetHistory = () => {
-        setParams({});
+        setParams(globalState);
         setHistoryList([]);
     }
 

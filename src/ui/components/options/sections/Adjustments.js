@@ -3,7 +3,6 @@ import React from 'react';
 import { useGetList } from '../../../../hooks/useGetList';
 
 import { BtnOrient } from '../BtnOrient';
-import SelectComponent from '../SelectComponent';
 import { SliderComponent } from '../SliderComponent';
 
 export const Adjustments = ({ params, setParams }) => {
@@ -11,7 +10,6 @@ export const Adjustments = ({ params, setParams }) => {
     const { 
         iluminationList, 
         colorList,
-        sizeList,
         invertList
     } = useGetList( params, setParams);
 
@@ -19,7 +17,7 @@ export const Adjustments = ({ params, setParams }) => {
         <div id="options__adjustments">
                 <div className="adjustment-content">
                     
-                    <h6 class="card-subtitle text-muted"> Ilumination </h6>
+                    <h6 class="card-subtitle ilum"> Ilumination </h6>
 
                     {
                         iluminationList.map( (adjust, key) => {
@@ -38,7 +36,7 @@ export const Adjustments = ({ params, setParams }) => {
                         })
                     }
 
-                <h6 class="card-subtitle text-muted"> Color </h6>
+                <h6 class="card-subtitle"> Color </h6>
 
                 {
                         colorList.map( (adjust, key) => {
@@ -57,10 +55,6 @@ export const Adjustments = ({ params, setParams }) => {
                         })
                     }
  
-                <h6 class="card-subtitle text-muted"> Size </h6>
-
-                <SelectComponent selectList={ sizeList } />
-
                 <h6 class="card-subtitle text-muted"> Orientation </h6>
 
                     <div className="invert-container alignX">

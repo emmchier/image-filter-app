@@ -9,7 +9,7 @@ export const MenuOptions = ({ params, setParams }) => {
 
     return (
         <div className="dashboard__menu-options">
-            <div className="accordion" id="accordionExample">
+            <div className="menu-content accordion" id="accordionExample">
                 {
                     sectionList.map( ( section, key ) => {
                         return(

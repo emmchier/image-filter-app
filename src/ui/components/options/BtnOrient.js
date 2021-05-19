@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CustomBtn } from '../customs/CustomBtn';
+
 export const BtnOrient = ( props ) => {
 
     const {
@@ -9,10 +11,11 @@ export const BtnOrient = ( props ) => {
     } = props;
 
     return (
-        <button 
-            className="btn-invert btn btn-primary"
-            onClick={ onClick }>
-                <i className={ `material-icons ${ classes }` }>{ orientIcon }</i>
-        </button>
+        <CustomBtn
+            classes={ `btn-invert btnFAB ${ classes }`} 
+            onClick={ onClick }
+            isIconVisible={ true }
+            btnIcon={ orientIcon }
+        />
     )
 }

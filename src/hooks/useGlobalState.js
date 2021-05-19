@@ -14,7 +14,7 @@ export const useGlobalState = () => {
           gam: 0, // gamma brigtness in same color LIGHT
 
         // ADJUST SIZE
-        fit: 'max', // size effects (select)
+        fit: 'clip', // size effects (select)
         //default = clip
         //clamp(elastizado), 
         //clip(se ajusta), 

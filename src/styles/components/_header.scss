@@ -1,13 +1,11 @@
  .tab-header {
     width: 100%;
-
     margin-bottom: 20px;
 
     .brand {
-        color: $secondaryColor !important;
+        color: $primaryTextColor !important;
         font-weight: 600;
         font-size: 1.2rem;
-        justify-content: center !important;
         
         img {
             width: 30px;
@@ -17,20 +15,16 @@
 
     .btn-tab {
         justify-content: center !important;
-        background-color: $whiteColor;
-        color: $secondaryColor;
+        border: 1px solid transparent;
     
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: $primaryColorTranslucentHover !important;
-            color: $secondaryColor !important;
+        &:hover {
+            background-color: $primaryColor !important;
         }
 
-        &.active,
-        &.active:hover {
-            background-color: $primaryColorTranslucent !important;
-            color: $secondaryColor !important;
+        &.active{
+            border: 1px solid transparent !important;
+            background-color: $backgroundLight !important;
         }
+
     }
 }

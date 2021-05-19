@@ -214,27 +214,27 @@ export const useGetList = ( params, setParams ) => {
 
     const shapeList = [
         {
-            shapeIcon: 'Shadow',
+            shapeIcon: 'corners',
             shapeName: 'Rounded Corners',
             onClick: ()=> { setParams({ ...params, mask: "corners" }) }
         },
         {
-            shapeIcon: 'Shadow',
+            shapeIcon: 'ellipse',
             shapeName: 'Ellipse',
             onClick: ()=> { setParams({ ...params, mask: "ellipse", fit:'fill', w:50, h:50  }) }
         },
         {
-            shapeIcon: 'Shadow',
+            shapeIcon: 'hexagon',
             shapeName: 'Hexagon',
             onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon.png" }) }
         },
         {
-            shapeIcon: 'Shadow',
+            shapeIcon: 'gradient-hex',
             shapeName: 'Gradient Hexagon',
             onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon-gradient.png" }) }
         },
         {
-            shapeIcon: 'Shadow',
+            shapeIcon: 'inverted-hex',
             shapeName: 'Inverted Hexagon',
             onClick: ()=> { setParams({ ...params, mask: "https://assets.imgix.net/gearbox/hexagon-inverted.png" }) }
         }

@@ -64,12 +64,12 @@ export const DashboardScreen = () => {
                             <CustomBtn 
                                 onClick={ ()=> handleAddItem() }
                                 btnTitle={ 'Save Changes' }
-                                classes={ 'btn-save' }
+                                classes={ 'btn-save btnNormal' }
                             />
                             <CustomBtn 
                                 onClick={ resetAll }
                                 btnTitle={ 'Reset all' }
-                                classes={ 'btn-reset-all' }
+                                classes={ 'btn-reset-all btnText' }
                                 isIconVisible={ true }
                                 btnIcon={ 'restart_alt' }
                             />

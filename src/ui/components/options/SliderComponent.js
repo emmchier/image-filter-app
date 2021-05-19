@@ -27,9 +27,12 @@ export const SliderComponent = ( props ) => {
             onChangeCommitted={ onChangeCommitted }
             valueLabelDisplay="auto"
         />
-        <i 
-          className="material-icons"
-          onClick={ onClick }>restart_alt</i>
+        <div className="btnFAB btn-reset">
+          <i 
+            className="material-icons reset-icon"
+            onClick={ onClick }>restart_alt</i>
+        </div>
+        
     </div>
   )
 }

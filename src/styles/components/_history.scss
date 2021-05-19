@@ -1,25 +1,21 @@
 .history-header {
 
     h2 {
-        font-size: .8rem;
-        padding: 8px 15px;
-        border-radius: 5px;
-        background-color: $primaryColorTranslucent;
+        font-size: $main_header_text;
+        padding: 10px 0 !important;
         line-height: 10px !important;
     }
 
     .btn-reset-history {
         color: $secondaryTextColor !important;
         font-size: .8rem;
-        margin: 0;
-        padding: 0;
+        padding-right: 0;
         transform: translateY(-3px);
-    
-        &:hover,
-        &:active,
-        &:focus {
-            text-decoration: underline !important;
+
+        &.disabled:hover {
+            text-decoration: none !important;
         }
+
     }
 
     
@@ -32,8 +28,7 @@
     max-height: 75vh;
 
     .item-history {
-        font-size: .8rem;
-        background-color: $primaryColorTranslucent;
+    
         color: $secondaryColor;
         margin-bottom: 5px;
         
@@ -43,28 +38,21 @@
         }
 
         &:hover {
-            background-color: $primaryColorTranslucentDark !important;
-            color: $secondaryColor !important;
-        }
-        
-        &:active,
-        &:focus {
-            background-color: $primaryColorTranslucent !important;
-            color: $secondaryColor !important;
+            background-color: $primaryLightColor !important;
         }
     }
 }
 
 .empty-history {
-    background-color: $secondaryTranslucentColor;
-    border-radius: 5px;
+    background-color: $backgroundLight;
+    border-radius: $main_border_radius;
     padding: 10px;
 
     p {
         margin: 0;
         padding: 0;
         font-size: .7rem;
-        color: $secondaryTextColor;
+        color: $primaryTextColor;
     }
 }
 

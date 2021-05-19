@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { useGetList } from '../../../../hooks/useGetList';
-
-import { MenuOptionHeader } from '../MenuOptionHeader';
+import { CustomBtn } from '../../customs/CustomBtn';
 import { ShapeIcon } from '../ShapeIcon';
 
 export const Shapes = ({ params, setParams }) => {
@@ -12,13 +11,13 @@ export const Shapes = ({ params, setParams }) => {
     return (
         <div id="options__shapes">
                 <div className="shapes-content">
-                 
-                    <button 
-                        className="btn btn-outline-primary" 
-                        onClick={ ()=> { setParams({ ...params, mask: "" }) } }>
-                            Reset
-                    </button>
-               
+
+                    <CustomBtn 
+                        onClick={ ()=> { setParams({ ...params, mask: "" }) } }
+                        btnTitle={ 'Reset' }
+                        classes={ 'btn-reset-all btn-reset-shapes btnText' }
+                    />
+              
                     {
                         shapeList.map( (shape, key) => {
                             return(

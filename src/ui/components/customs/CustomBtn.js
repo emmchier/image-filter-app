@@ -23,8 +23,8 @@ export const CustomBtn = ( props ) => {
         <Link 
             className={
                 hover 
-                ? `btn btn-primary custom-btn hover-active ${ classes }`
-                : `btn btn-primary custom-btn ${ classes }`
+                ? `hover-active ${ classes }`
+                : ` ${ classes }`
             }
             onMouseEnter={() => { setHover( isHover ) }}
             onClick={ onClick }

@@ -45,7 +45,7 @@ export const Effects = ({ params, setParams }) => {
                     onChange={(e, value) =>
                     setParams({ ...params, invert: value})} />
 
-                <div className="monochome-container">
+                <div className="monochome-container alignX">
                     <h6>Monochrome</h6>
                     <ColorPickerComponent 
                         setParams={setParams} 

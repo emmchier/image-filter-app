@@ -26,8 +26,8 @@ export const HistoryComponent = (props) => {
                 <CustomBtn
                     classes={ 
                         historyList.length > 0 
-                        ? "btn-reset-history no-bg" 
-                        : "btn-reset-history no-bg disabled"} 
+                        ? "btn-reset-history btnText" 
+                        : "btn-reset-history btnText disabled"} 
                     onClick={ resetHistory }
                     btnTitle={ 'Clear' }
                 />
@@ -45,7 +45,7 @@ export const HistoryComponent = (props) => {
                                     {...item}
                                     className="animate__animated animate__fadeIn">
                                         <CustomBtn
-                                            classes={ 'item-history alignX' } 
+                                            classes={ 'btnNormal item-history alignX' } 
                                             onClick={ ()=> handleChangeParams( key ) }
                                             btnTitle={ `Group ${key + 1}` }
                                             isIconLeftVisible={ true }

@@ -19,27 +19,30 @@ export const Borders = ({ params, setParams }) => {
         <div id="options__borders">
             <div className="borders-content">
                 
-               <h6>Border Color</h6>
-                <ColorPickerComponent 
-                    setParams={setParams} 
-                    color={ colorBorder }
-                    setColor={ setColorBorder }
-                    paramsValue={{ ...params, bg: `#${colorBorder.hex}` }}
-                    onClick={ ()=> handleBgReset()  }
-                />
+                <div className="alignX">
+                    <h6>Border Color</h6>
+                    <ColorPickerComponent 
+                        setParams={setParams} 
+                        color={ colorBorder }
+                        setColor={ setColorBorder }
+                        paramsValue={{ ...params, bg: `#${colorBorder.hex}` }}
+                        onClick={ ()=> handleBgReset()  }
+                    />
+                </div>
 
-                <h6>Border Size</h6>
-                <SliderComponent
-                    value={params.pad}
-                    onChange= {(e, value) =>
-                        setParams({ ...params, pad: value}) }
-                    onChangeCommitted={ ()=> 
-                        setParams({ ...params, pad: params.pad }) }
-                    onClick={ ()=> { setParams({ ...params, pad: '' }) } }
-                    min={0}
-                    max={100}
-                />
-
+        
+                    <h6 className="border-size">Border Size</h6>
+                    <SliderComponent
+                        value={params.pad}
+                        onChange= {(e, value) =>
+                            setParams({ ...params, pad: value}) }
+                        onChangeCommitted={ ()=> 
+                            setParams({ ...params, pad: params.pad }) }
+                        onClick={ ()=> { setParams({ ...params, pad: '' }) } }
+                        min={0}
+                        max={100}
+                    />
+          
             </div>
         </div>
     )

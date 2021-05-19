@@ -1,19 +1,207 @@
-.dashboard__menu-options {
-    overflow-y: scroll !important;
-    height: 80vh !important;
-    padding-right: 3px;
-}
+// Header actions
 
 .options-header {
     margin-bottom: 10px;
 }
 
-.btn-reset-all {
-    color: $secondaryTextColor !important;
-    font-size: .8rem;
+// Menu Options
+
+.dashboard__menu-options {
+    overflow-y: scroll !important;
+    height: 80vh !important;
+    padding-right: 3px;
+
+    h6 {
+        font-size: $main_secondary_text;
+        margin-right: 10px;
+    }
+
+    .menu-content {
+        border: 1px solid $disableColor;
+        
+        border-radius: $main_border_radius !important;
+    }
+
+    p {
+        font-size: $main_secondary_text !important;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .section-menu {
+        border: none;
+        border-bottom: 1px solid $disableColor !important;
+
+        .card-header {
+            background-color: $whiteColor;
+            cursor: pointer;
+
+            h2 {
+                color: $secondaryColor;
+                font-size: $main_header_text !important;
+            }
+        } 
+
+        .invert-container {
+            margin-bottom: 10px;
+
+            h6 {
+                font-size: $main_secondary_text;
+                margin-right: 10px;
+                transform: translateY(5px);
+            }
+        }
+    }
+
+    .card-subtitle {
+        font-size: $main_secondary_text;
+        color: $secondaryTextColor;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    .btn-reset {
+        margin-bottom: 8px;
+        margin-left: 10px;
+        transform: translateY(3px);
+        box-shadow: none !important;
+        border: 1px solid $disableColor;
+
+        .reset-icon {
+            font-size: 20px !important;
+        }
+
+    }
+
+    
+    .btn-invert {
+        width: auto;
+        height: auto;
+        border: 1px solid $disableColor;
+        color: $secondaryColor;
+        box-shadow: none !important;
+        margin-right: 10px;
+    
+        &:hover {
+            background-color: #ebe8e8;
+            border: 1px solid #dfdcdc;
+        }
+    
+        img {
+            height: 20px;
+            margin: 4px 0;
+        }
+    
+        &.btn-invert-left {
+            transform: rotate(180deg);
+        }
+        &.btn-invert-bottom {
+            transform: rotate(90deg);
+        }
+        &.btn-invert-top {
+            transform: rotate(270deg);
+            margin-right: 0;
+        }
+    }
+    
+    .rotate-container {
+        .col-md-6 {
+            padding: 0;
+            width: auto !important;
+        }
+    }
+}
+
+.PrivateValueLabel-thumb-1 {
+    color: $secondaryColor;
+}
+
+.MuiFormControlLabel-labelPlacementStart {
+    margin-left: 0 !important;
+
+    .MuiTypography-body1 {
+        font-size: $main_secondary_text !important;
+    }
+
+    .MuiSwitch-thumb {
+        width: 19px;
+        height: 19px;
+    }
+
+    .MuiSwitch-track {
+        height: 14px;
+    }
+
+    .MuiSwitch-switchBase {
+        color: $primaryColor;
+
+        &.Mui-checked {
+            color: $secondaryColor;
+        }
+    }
+}
+
+.makeStyles-root-10 {
+    transform: translateY(-4px);
+}
+
+.makeStyles-root-14 {
+    width: 20px !important;
+    min-width: 20px !important;
+    height: 20px !important;
+}
+
+.MuiInputBase-input {
+    width: 80px !important;
+    border: 0;
+    height: 1.1876em;
     margin: 0;
+    display: initial;
+    padding: 5px 0 !important;
+    min-width: 0;
+}
+
+    .shape-item {
+        padding: 10px !important;
+        border: 1px solid $disableColor;
+        border-radius: $main_border_radius;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .shape-icon {
+            width: $main_icon_size;
+            margin: 0 !important;
+        }
+
+        h6 {
+            margin-bottom: 0;margin-left: 10px;
+        }
+    }
+
+    .border-size {
+        margin-top: 10px;
+        margin-bottom: 0 !important;
+    }
+
+.btn-reset-shapes {
+    justify-content: right;
+    display: flex;
+    margin-bottom: 10px;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+     
+    i {
+        line-height: 8px;
+
+        
+    }
+}
+
+.btn-reset-all {
     padding: 0;
-    background-color: $whiteColor;
+    
 
     .btn-icon {
         font-size: 20px;
@@ -26,66 +214,5 @@
     &:focus {
         text-decoration: underline !important;
         background-color: $whiteColor !important;
-    }
-}
-
-.btn-save {
-    font-size: .8rem;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: $primaryColorTranslucent;
-    line-height: 10px !important;
-    color: $secondaryColor !important;
-
-    &:hover {
-        background-color: $primaryColorTranslucentDark !important;
-        color: $secondaryColor !important;
-    }
-
-    &:active,
-    &:focus {
-        background-color: $primaryColorTranslucent !important;
-        color: $secondaryColor !important;
-    }
-}
-
-.section-menu .card-header h2 {
-    text-transform: initial !important;
-    color: $secondaryColor;
-}
-
-.btn-invert {
-    width: auto;
-    height: auto;
-    background-color: #FFFFFF;
-    border: 1px solid transparent;
-    @include getShadow;
-    color: #000000;
-
-    &:hover {
-        background-color: #ebe8e8;
-        border: 1px solid #dfdcdc;
-    }
-
-    img {
-        height: 20px;
-        margin: 4px 0;
-    }
-
-    .btn-invert-left {
-        transform: rotate(180deg);
-    }
-    .btn-invert-bottom {
-        transform: rotate(90deg);
-    }
-    .btn-invert-top {
-        transform: rotate(270deg);
-    }
-}
-
-.rotate-container {
-    .col-md-6 {
-        padding: 0;
-        width: auto !important;
     }
 }

@@ -28,8 +28,8 @@ export const Header = ({ visibility, setVisibility }) => {
                                 btnTitle={ 'Sandbox' }
                                 classes={ 
                                     visibility 
-                                    ? 'btn-tab btn-tab-sandbox pushAside active' 
-                                    : 'btn-tab btn-tab-sandbox pushAside' }
+                                    ? 'btn-tab btnOutline pushAside active' 
+                                    : 'btn-tab btnOutline pushAside' }
                             />
                         </div>
                         <div className="col-sm col-md-6">
@@ -38,8 +38,8 @@ export const Header = ({ visibility, setVisibility }) => {
                                 btnTitle={ 'Upload' }
                                 classes={ 
                                     !visibility 
-                                    ? 'btn-tab btn-tab-upload active pushAside' 
-                                    : 'btn-tab btn-tab-upload pushAside' }
+                                    ? 'btn-tab btnOutline active pushAside' 
+                                    : 'btn-tab btnOutline pushAside' }
                                
                         />
                         </div>
