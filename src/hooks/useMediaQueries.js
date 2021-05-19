@@ -1,3 +1,6 @@
+/*
+ * custom hook to get media queries propieties
+ */
 import { useMediaQuery } from "react-responsive";
 
 export const useMediaQueries = () => {

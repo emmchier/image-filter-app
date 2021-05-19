@@ -1,113 +1,142 @@
-// Main styles 
+// Main style settings 
+
 @import './theme'; 
 
 @mixin borderBox($border-box) {
-  -webkit-box-sizing: $border-box;
-  -moz-box-sizing: $border-box;
-  box-sizing: $border-box;
+-webkit-box-sizing: $border-box;
+-moz-box-sizing: $border-box;
+box-sizing: $border-box;
 }
 
 html, body {
-    width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include borderBox(border-box);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+section {
     height: 100vh;
-    font-family: 'Open Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    @include borderBox(border-box);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  main {
-    width: 100%;
-  }
+}
 
-  section {
-      height: 100vh;
-  }
-  
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
+}
 
-  a {
-    text-decoration: none !important;
-  }
-  
-  .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  header {
-    width: 100%;
-    height: 60vh !important;
-  }
+a {
+  text-decoration: none !important;
+}
 
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  /* oculto borde selected bootstrap de todos los componentes */
-  *:focus,
-  button:focus,
-  .form-control:focus {
-    outline: none !important;
-    outline: 0 !important;
-    outline: hidden !important;
-    box-shadow: none !important;
-  }
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  .overlay {
-    background-color: $overlay;
-    width: 100vw;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    z-index: 99999 !important;
-    position: absolute;
-    top: 0;
-    justify-content: center;
-    display: flex;
+header {
+  width: 100%;
+  height: 60vh !important;
+}
 
-    .loading-item {
-      background-color: $primaryColor;
-      color: $primaryColor;
-      z-index: 9999;
-    }
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* hide border selected from bootstrap active components */
+
+*:focus,
+button:focus,
+.form-control:focus {
+  outline: none !important;
+  outline: 0 !important;
+  outline: hidden !important;
+  box-shadow: none !important;
+}
+
+.overlay {
+  background-color: $overlay;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 99999 !important;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  display: flex;
+
+  .loading-item {
+    background-color: $primaryColor;
+    color: $primaryColor;
+    z-index: 9999;
   }
+}
+
+.spinner-grow {
+  background-color: $primaryColor !important;
+}
+
+.loading-img {
+  height: 100% !important;
+}
 
 .main {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .hero-image {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  margin-bottom: 50px;
+  max-height: 400px;
+}
+
+.hero-image h2 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 3px 0px black;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.empty-container {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+
+  p {
     justify-content: center;
-    width: 100vw;
-    height: calc(100vh - 100px);
-    margin-bottom: 50px;
-    max-height: 400px;
-  }
-  
-  .hero-image h2 {
-    font-size: 2rem;
-    color: white;
-    text-shadow: 3px 0px black;
-    padding: 20px 20px 20px 20px;
     text-align: center;
   }
-  
-  .gallery {
-    display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+
+  img {
+    height: 50vh;
   }
+
+  span {
+    display: block;
+  }
+}
 
 
 

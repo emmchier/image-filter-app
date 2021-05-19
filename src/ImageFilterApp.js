@@ -8,6 +8,5 @@ export const ImageFilterApp = () => {
         <div className="main">
             <AppRouter />
         </div>
-        
     )
 }

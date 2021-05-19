@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { CustomBtn } from '../customs/CustomBtn';
-import { UploadComponent } from '../upload/UploadComponent';
+import React from 'react';
 
+import { UploadComponent } from '../upload/UploadComponent';
 import { ImageSlider } from './ImageSlider';
 
 export const ImageGallery = ({ params, visibility }) => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useReset } from '../../../hooks/useReset';
 import { CustomBtn } from '../customs/CustomBtn';
@@ -31,6 +31,7 @@ export const HistoryComponent = (props) => {
                     onClick={ resetHistory }
                     btnTitle={ 'Clear' }
                 />
+
             </div>
             
             {
@@ -44,6 +45,7 @@ export const HistoryComponent = (props) => {
                                     key={key}
                                     {...item}
                                     className="animate__animated animate__fadeIn">
+
                                         <CustomBtn
                                             classes={ 'btnNormal item-history alignX' } 
                                             onClick={ ()=> handleChangeParams( key ) }
@@ -51,9 +53,9 @@ export const HistoryComponent = (props) => {
                                             isIconLeftVisible={ true }
                                             btnIcon={ 'palette' }
                                         />
+                                        
                                 </li>
                             )
-                            
                         })
                     }
                 </ul>
@@ -62,7 +64,6 @@ export const HistoryComponent = (props) => {
                     <p>Your history of saved changes will appear here</p>
                 </div>
             }
-            
         </>
     )
 }

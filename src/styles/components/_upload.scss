@@ -2,7 +2,7 @@
     width: 100%;
     height: auto;
     border-radius: $main_border_radius;
-    border: 2px solid $secondaryLightColor;
+    border: 2px solid $disableColor;
     margin: 20px 0;
     justify-content: center;
     text-align: center;
@@ -14,22 +14,24 @@
         justify-content: center;
         width: 100%;
     }
-
-   
 }
 
 .btn-upload {
     margin-top: 1rem;
+    padding: 15px 30px;
     width: 50% !important;
+    justify-content: center !important;
 
     .pushAside {
         display: none !important; 
         justify-content: none !important;
         margin: 0 !important;
-        
     }
 
     i {
-        font-size: 25px;
+        font-size: $main_icon_size;
+        margin-left: 15px;
+        transform: translateY(5px);
     }
 }
+

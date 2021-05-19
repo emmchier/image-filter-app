@@ -1,4 +1,4 @@
- .tab-header {
+.tab-header {
     width: 100%;
     margin-bottom: 20px;
 
@@ -16,7 +16,7 @@
     .btn-tab {
         justify-content: center !important;
         border: 1px solid transparent;
-    
+
         &:hover {
             background-color: $primaryColor !important;
         }
@@ -25,6 +25,5 @@
             border: 1px solid transparent !important;
             background-color: $backgroundLight !important;
         }
-
     }
 }

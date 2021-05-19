@@ -5,10 +5,7 @@ import Switch from '@material-ui/core/Switch';
 
 export default function SwitchComponent(props) {
 
-    const {
-        onChange,
-        isChecked
-        } = props;
+    const { onChange, isChecked } = props;
 
   return (
     <FormControlLabel

@@ -32,7 +32,6 @@ export const SliderComponent = ( props ) => {
             className="material-icons reset-icon"
             onClick={ onClick }>restart_alt</i>
         </div>
-        
     </div>
   )
 }

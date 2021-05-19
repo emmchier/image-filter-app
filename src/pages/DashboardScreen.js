@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Scrollbars from 'react-custom-scrollbars';
-import { useGlobalState } from '../hooks/useGlobalState';
 
+import { useGlobalState } from '../hooks/useGlobalState';
 import { useReset } from '../hooks/useReset';
 import { CustomBtn } from '../ui/components/customs/CustomBtn';
 import { ImageGallery } from '../ui/components/gallery/ImageGallery';
@@ -13,32 +12,24 @@ export const DashboardScreen = () => {
 
     const globalState = useGlobalState();
 
-    // dashboard
     const [ params, setParams ] = useState(globalState);
     
-    // history
     const [ historyList, setHistoryList ] = useState([]);
 
     const { resetAll } = useReset( setParams, setHistoryList );
 
-    // add btn
+    // add new history item
     const handleAddItem = () => {
-        const historyItem = historyList.concat({
-           params 
-        });
+        const historyItem = historyList.concat({ params });
         setHistoryList( historyItem );
     }
-    console.log(historyList);
-
-
-
-   const [ visibility, setVisibility ] = useState(true);
+  
+    const [ visibility, setVisibility ] = useState(true);
     
     return (
 
          <div className="container">
             <div className="row">
-                
                 <div className="col-sm col-md-8">
 
                     <Header visibility={ visibility } setVisibility={ setVisibility } />
@@ -54,18 +45,22 @@ export const DashboardScreen = () => {
                   
                         </div>
                         <div className="col-sm col-md-9">
+
                             <ImageGallery params={ params } visibility={ visibility } />
+
                         </div>
                     </div>
                 </div>
                 
                 <div className="col-sm col-md-4">
                     <div className="options-header alignX pushAside">
+
                             <CustomBtn 
                                 onClick={ ()=> handleAddItem() }
                                 btnTitle={ 'Save Changes' }
                                 classes={ 'btn-save btnNormal' }
                             />
+
                             <CustomBtn 
                                 onClick={ resetAll }
                                 btnTitle={ 'Reset all' }
@@ -81,6 +76,5 @@ export const DashboardScreen = () => {
                 </div>
             </div>
         </div>
-
     )
 }

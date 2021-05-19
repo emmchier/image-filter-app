@@ -12,7 +12,6 @@ export default function ColorPickerComponent( props ) {
         onClick
     } = props;
     
-
   const handleChange = (value) => {
     setColor(value);
     setParams( paramsValue )

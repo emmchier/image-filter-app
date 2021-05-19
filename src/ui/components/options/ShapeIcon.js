@@ -8,6 +8,12 @@ import HexagonInvertIcon from './../../../assets/inverted-hex.svg';
 
 export const ShapeIcon = (props) => {
 
+    const {
+        shapeIcon,
+        shapeName,
+        onClick
+    } = props;
+
     const setShapeIcon = (shape) => {
         switch (shape) {
             case 'corners':
@@ -22,12 +28,6 @@ export const ShapeIcon = (props) => {
                 return <img src={ HexagonInvertIcon } className="shape-icon"  alt={ 'show inverted hexagon shape' } />
         }
     }
-
-    const {
-        shapeIcon,
-        shapeName,
-        onClick
-    } = props;
 
     return (
         <div className="shape-item">

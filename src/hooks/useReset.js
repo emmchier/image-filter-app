@@ -1,5 +1,8 @@
 import { useGlobalState } from "./useGlobalState";
 
+/*
+ * custom hook that returns reset value functions
+ */
 export const useReset =  ( setParams, setHistoryList ) => {
 
     const globalState = useGlobalState();

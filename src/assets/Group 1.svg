@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="427" height="232" viewBox="0 0 427 232">
   <g id="Group_1" data-name="Group 1" transform="translate(-194 -143)">
-    <rect id="Rectangle_1" data-name="Rectangle 1" width="427" height="232" transform="translate(194 143)" fill="#fff"/>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="427" height="232" transform="translate(194 143)" fill="#9368ff21"/>
     <g id="perm_media_black_24dp" transform="translate(335 186.261)">
       <path id="Path_1" data-name="Path 1" d="M0,0H146V146H0Z" fill="none"/>
-      <path id="Path_2" data-name="Path 2" d="M12.167,26.333H0V56.75H.061L0,111.5a12.2,12.2,0,0,0,12.167,12.167h109.5V111.5H12.167Zm30.417,54.75H127.75L106.458,53.708,91.25,72.019,69.958,44.583Zm91.25-66.917H85.167L73,2H36.5A12.15,12.15,0,0,0,24.394,14.167l-.061,73A12.2,12.2,0,0,0,36.5,99.333h97.333A12.2,12.2,0,0,0,146,87.167V26.333A12.2,12.2,0,0,0,133.833,14.167Zm0,73H36.5v-73H67.951l8.577,8.577,3.589,3.589h53.716Z" transform="translate(0 10.167)" fill="#d1cfcf"/>
+      <path id="Path_2" data-name="Path 2" d="M12.167,26.333H0V56.75H.061L0,111.5a12.2,12.2,0,0,0,12.167,12.167h109.5V111.5H12.167Zm30.417,54.75H127.75L106.458,53.708,91.25,72.019,69.958,44.583Zm91.25-66.917H85.167L73,2H36.5A12.15,12.15,0,0,0,24.394,14.167l-.061,73A12.2,12.2,0,0,0,36.5,99.333h97.333A12.2,12.2,0,0,0,146,87.167V26.333A12.2,12.2,0,0,0,133.833,14.167Zm0,73H36.5v-73H67.951l8.577,8.577,3.589,3.589h53.716Z" transform="translate(0 10.167)" fill="#9368ff21"/>
     </g>
   </g>
 </svg>

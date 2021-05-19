@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
 import { createColor } from 'material-ui-color';
-
 import ColorPickerComponent from '../ColorPickerComponent';
-import { MenuOptionHeader } from '../MenuOptionHeader';
 import { SliderComponent } from '../SliderComponent';
 
 export const Borders = ({ params, setParams }) => {
@@ -16,11 +14,13 @@ export const Borders = ({ params, setParams }) => {
     }
 
     return (
+
         <div id="options__borders">
             <div className="borders-content">
                 
                 <div className="alignX">
                     <h6>Border Color</h6>
+
                     <ColorPickerComponent 
                         setParams={setParams} 
                         color={ colorBorder }
@@ -29,19 +29,18 @@ export const Borders = ({ params, setParams }) => {
                         onClick={ ()=> handleBgReset()  }
                     />
                 </div>
+                <h6 className="border-size">Border Size</h6>
 
-        
-                    <h6 className="border-size">Border Size</h6>
-                    <SliderComponent
-                        value={params.pad}
-                        onChange= {(e, value) =>
-                            setParams({ ...params, pad: value}) }
-                        onChangeCommitted={ ()=> 
-                            setParams({ ...params, pad: params.pad }) }
-                        onClick={ ()=> { setParams({ ...params, pad: '' }) } }
-                        min={0}
-                        max={100}
-                    />
+                <SliderComponent
+                    value={params.pad}
+                    onChange= {(e, value) =>
+                        setParams({ ...params, pad: value}) }
+                    onChangeCommitted={ ()=> 
+                        setParams({ ...params, pad: params.pad }) }
+                    onClick={ ()=> { setParams({ ...params, pad: '' }) } }
+                    min={0}
+                    max={100}
+                />
           
             </div>
         </div>

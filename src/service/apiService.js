@@ -1,7 +1,8 @@
-// api calls
+/*
+ * get array image list from service
+ */
 const IMAGE_BASE_URL = 'https://storage.googleapis.com/nanlabs-engineering-technical-interviews/imgix-samples-list.json';
- 
-// get image list from JSON
+
 export const getImageList = async() => {
  
      try {

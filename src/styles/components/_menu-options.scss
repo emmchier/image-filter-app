@@ -1,10 +1,6 @@
-// Header actions
-
 .options-header {
     margin-bottom: 10px;
 }
-
-// Menu Options
 
 .dashboard__menu-options {
     overflow-y: scroll !important;
@@ -18,7 +14,6 @@
 
     .menu-content {
         border: 1px solid $disableColor;
-        
         border-radius: $main_border_radius !important;
     }
 
@@ -70,10 +65,8 @@
         .reset-icon {
             font-size: 20px !important;
         }
-
     }
 
-    
     .btn-invert {
         width: auto;
         height: auto;
@@ -81,30 +74,33 @@
         color: $secondaryColor;
         box-shadow: none !important;
         margin-right: 10px;
-    
+
         &:hover {
             background-color: #ebe8e8;
             border: 1px solid #dfdcdc;
         }
-    
+
         img {
             height: 20px;
             margin: 4px 0;
         }
-    
+
         &.btn-invert-left {
             transform: rotate(180deg);
         }
+
         &.btn-invert-bottom {
             transform: rotate(90deg);
         }
+
         &.btn-invert-top {
             transform: rotate(270deg);
             margin-right: 0;
         }
     }
-    
+
     .rotate-container {
+        
         .col-md-6 {
             padding: 0;
             width: auto !important;
@@ -119,30 +115,30 @@
 .MuiFormControlLabel-labelPlacementStart {
     margin-left: 0 !important;
 
-    .MuiTypography-body1 {
-        font-size: $main_secondary_text !important;
-    }
+.MuiTypography-body1 {
+    font-size: $main_secondary_text !important;
+}
 
-    .MuiSwitch-thumb {
-        width: 19px;
-        height: 19px;
-    }
+.MuiSwitch-thumb {
+    width: 19px;
+    height: 19px;
+}
 
-    .MuiSwitch-track {
-        height: 14px;
-    }
+.MuiSwitch-track {
+    height: 14px;
+}
 
-    .MuiSwitch-switchBase {
-        color: $primaryColor;
+.MuiSwitch-switchBase {
+    color: $primaryColor;
 
-        &.Mui-checked {
-            color: $secondaryColor;
-        }
+    &.Mui-checked {
+        color: $secondaryColor;
     }
+}
 }
 
 .makeStyles-root-10 {
-    transform: translateY(-4px);
+transform: translateY(-4px);
 }
 
 .makeStyles-root-14 {
@@ -161,27 +157,27 @@
     min-width: 0;
 }
 
-    .shape-item {
-        padding: 10px !important;
-        border: 1px solid $disableColor;
-        border-radius: $main_border_radius;
-        margin-bottom: 10px;
-        cursor: pointer;
+.shape-item {
+    padding: 10px !important;
+    border: 1px solid $disableColor;
+    border-radius: $main_border_radius;
+    margin-bottom: 10px;
+    cursor: pointer;
 
-        .shape-icon {
-            width: $main_icon_size;
-            margin: 0 !important;
-        }
-
-        h6 {
-            margin-bottom: 0;margin-left: 10px;
-        }
+    .shape-icon {
+        width: $main_icon_size;
+        margin: 0 !important;
     }
 
-    .border-size {
-        margin-top: 10px;
-        margin-bottom: 0 !important;
+    h6 {
+        margin-bottom: 0;margin-left: 10px;
     }
+}
+
+.border-size {
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+}
 
 .btn-reset-shapes {
     justify-content: right;
@@ -191,17 +187,14 @@
     &:hover {
         text-decoration: none !important;
     }
-     
+        
     i {
         line-height: 8px;
-
-        
     }
 }
 
 .btn-reset-all {
     padding: 0;
-    
 
     .btn-icon {
         font-size: 20px;

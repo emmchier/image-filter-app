@@ -22,73 +22,84 @@ export const CarouselComponent = ({ gallery, newParams }) => {
 
   const [ stringUrl, setStringUrl ] = useState('');
 
+  // get url with params
   const getURL = url => buildURL( url, newParams );
 
+  // copy to clipboard
   const copyUrl = url => 
     navigator.clipboard.writeText( getURL( url ) );
   
+  // open url link in browser
   const openInBrowser = url => {
     const urlSt = getURL( url );
     const newStringUrl = urlSt.substr(8);
     setStringUrl( newStringUrl );
   }
 
+  // download image file
   const downloadImage = ( url, name ) => 
     getImageByURL( getURL( url ), name );
   
     return (
       <>
+
       <Swiper 
         style={{
           '--swiper-navigation-size': 
           '10px'
         }} 
-        loop={true} 
-        spaceBetween={10} 
-        navigation={true} 
+        loop={ true } 
+        spaceBetween={ 10 } 
+        navigation={ true } 
         thumbs={{ swiper: thumbsSwiper }} 
         className="swiperDisplay">
-          {
-              gallery.map( (img, key)=> {
-                  return(
-                    <SwiperSlide
-                        key={ key }>
-                          <div className="sandbox-item">
-                          <div className="sandbox-item-actions alignX">
-                              <CustomBtn
-                                btnTitle={ 'Open in browser' }
-                                classes={ 'btn-action btnOutline' }
-                                onClick={()=> openInBrowser( img.url ) }
-                                to={ `//${stringUrl}` }
-                                btnTarget={ '_blank' }
-                              />
-                               <CustomBtn
-                                btnTitle={ 'Copy URL' }
-                                classes={ 'btn-action btnOutline' }
-                                onClick={ () => copyUrl( img.url ) }
-                              />
-                               <CustomBtn
-                                btnTitle={ 'Download Image' }
-                                classes={ 'btn-action btnOutline' }
-                                onClick={ ()=> downloadImage( img.url, img.name ) }
-                              />
-                            </div>
-                            <div className="image-item">
-                            <Imgix
-                                src={ getURL( img.url ) }
-                                key={key}
-                            />
-                            </div>
-                            
-                            
-          
-                           
-                          </div>
-                    </SwiperSlide>
-                  )
-              })
-          }
+        {
+          gallery.map( ( img, key )=> {
+            return(
+
+              <SwiperSlide
+                key={ key }>
+                <div className="sandbox-item">
+                  <div className="sandbox-item-actions alignX">
+
+                    <CustomBtn
+                      btnTitle={ 'Open in browser' }
+                      classes={ 'btn-action btnOutline' }
+                      onClick={()=> openInBrowser( img.url ) }
+                      to={ `//${ stringUrl }` }
+                      btnTarget={ '_blank' }
+                    />
+
+                    <CustomBtn
+                      btnTitle={ 'Copy URL' }
+                      classes={ 'btn-action btnOutline' }
+                      onClick={ () => copyUrl( img.url ) }
+                    />
+
+                    <CustomBtn
+                      btnTitle={ 'Download Image' }
+                      classes={ 'btn-action btnOutline' }
+                      onClick={ ()=> downloadImage( img.url, img.name ) }
+                    />
+
+                  </div>
+                  <div className="image-item">
+
+                  <Imgix
+                      src={ getURL( img.url ) }
+                      key={ key }
+                      width={ 400 }
+                      height={ 400 }
+                  />
+
+                  </div>
+                </div>
+              </SwiperSlide>
+            )
+          })
+        }
         </Swiper> 
+
         <Swiper 
           onSwiper={setThumbsSwiper} 
           loop={false} 
@@ -98,16 +109,16 @@ export const CarouselComponent = ({ gallery, newParams }) => {
           watchSlidesVisibility={true} 
           watchSlidesProgress={true} 
           className="swiperNav">
-           {
-              gallery.map( (img, key)=> {
-                  return(
-                    <SwiperSlide
-                        key={ key }
-                        { ...img }>
-                        <img src={ img.url } alt="show a car img" />
-                    </SwiperSlide>
-                  )
-              })
+          {
+            gallery.map( (img, key)=> {
+                return(
+                  <SwiperSlide
+                      key={ key }
+                      { ...img }>
+                      <img src={ img.url } alt="show a car img" />
+                  </SwiperSlide>
+                )
+            })
           }
         </Swiper>
         </>

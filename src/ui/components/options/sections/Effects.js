@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 
 import { useGetList } from '../../../../hooks/useGetList';
-
 import { createColor } from 'material-ui-color';
 import ColorPickerComponent from '../ColorPickerComponent';
-import { MenuOptionHeader } from '../MenuOptionHeader';
 import { SliderComponent } from '../SliderComponent';
 import SwitchComponent from '../SwitchComponent';
 
 export const Effects = ({ params, setParams }) => {
 
-    const { effectList } = useGetList( params, setParams);
+    const { effectList } = useGetList( params, setParams );
 
     const [ color, setColor ] = useState(createColor("#000"));
 
@@ -24,7 +22,7 @@ export const Effects = ({ params, setParams }) => {
             <div className="effects-content">
 
                 {
-                    effectList.map( (adjust, key) => {
+                    effectList.map( ( adjust, key ) => {
                         return(
                             <SliderComponent
                                 key={key}
@@ -55,7 +53,6 @@ export const Effects = ({ params, setParams }) => {
                         onClick={ ()=> handleColorReset()  }
                     />
                 </div>
-
             </div> 
         </div>
     )

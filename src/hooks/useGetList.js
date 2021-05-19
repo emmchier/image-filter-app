@@ -1,3 +1,6 @@
+/*
+ * custom hook to return all project lists
+ */
 export const useGetList = ( params, setParams ) => {
 
     const iluminationList = [
