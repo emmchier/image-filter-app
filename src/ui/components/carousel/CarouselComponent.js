@@ -13,6 +13,7 @@ import SwiperCore, {
 import Imgix, { buildURL } from 'react-imgix';
 import { CustomBtn } from '../customs/CustomBtn';
 import { getImageByURL } from '../../../actions/downloadImage';
+import { useMediaQueries } from '../../../hooks/useMediaQueries';
 
 SwiperCore.use([Navigation,Thumbs]);
 
@@ -24,6 +25,8 @@ export const CarouselComponent = ({ gallery, newParams }) => {
 
   // get url with params
   const getURL = url => buildURL( url, newParams );
+
+  const { isMobile } = useMediaQueries();
 
   // copy to clipboard
   const copyUrl = url => 
@@ -62,28 +65,60 @@ export const CarouselComponent = ({ gallery, newParams }) => {
                 <div className="sandbox-item">
                   <div className="sandbox-item-actions alignX">
 
-                    <CustomBtn
-                      btnTitle={ 'Open in browser' }
-                      classes={ 'btn-action btnOutline' }
-                      onClick={()=> openInBrowser( img.url ) }
-                      to={ `//${ stringUrl }` }
-                      btnTarget={ '_blank' }
-                    />
+                  {
+                    !isMobile
+                    ? <div className="btn-actions-desk">
+                       <CustomBtn
+                        btnTitle={ 'Open in browser' }
+                        classes={ 'btn-action btnOutline' }
+                        onClick={()=> openInBrowser( img.url ) }
+                        to={ `//${ stringUrl }` }
+                        btnTarget={ '_blank' }
+                      />
 
-                    <CustomBtn
-                      btnTitle={ 'Copy URL' }
-                      classes={ 'btn-action btnOutline' }
-                      onClick={ () => copyUrl( img.url ) }
-                      to={ '/#' }
-                    />
+                      <CustomBtn
+                        btnTitle={ 'Copy URL' }
+                        classes={ 'btn-action btnOutline' }
+                        onClick={ () => copyUrl( img.url ) }
+                        to={ '/#' }
+                      />
 
-                    <CustomBtn
-                      btnTitle={ 'Download Image' }
-                      classes={ 'btn-action btnOutline' }
-                      onClick={ ()=> downloadImage( img.url, img.name ) }
-                      to={ '/#' }
-                    />
+                      <CustomBtn
+                        btnTitle={ 'Download Image' }
+                        classes={ 'btn-action btnOutline' }
+                        onClick={ ()=> downloadImage( img.url, img.name ) }
+                        to={ '/#' }
+                      />
+                      </div>
+                      :
+                      <div className="btn-actions-res">
+                        <CustomBtn
+                          isIconVisible={ true }
+                          btnIcon={ 'open_in_browser' }
+                          classes={ 'btn-action btnFAB' }
+                          onClick={()=> openInBrowser( img.url ) }
+                          to={ `//${ stringUrl }` }
+                          btnTarget={ '_blank' }
+                        />
 
+                        <CustomBtn
+                          isIconVisible={ true }
+                          btnIcon={ 'content_copy' }
+                          classes={ 'btn-action btnFAB' }
+                          onClick={ () => copyUrl( img.url ) }
+                          to={ '/#' }
+                        />
+
+                        <CustomBtn
+                        isIconVisible={ true }
+                        btnIcon={ 'file_download' }
+                          classes={ 'btn-action btnFAB' }
+                          onClick={ ()=> downloadImage( img.url, img.name ) }
+                          to={ '/#' }
+                        />
+                      </div>
+                    }
+                  
                   </div>
                   <div className="image-item">
 

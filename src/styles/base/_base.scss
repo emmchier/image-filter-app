@@ -1,6 +1,7 @@
 // Main style settings 
 
 @import './theme'; 
+@import './media-queries'; 
 
 @mixin borderBox($border-box) {
 -webkit-box-sizing: $border-box;
@@ -135,6 +136,20 @@ button:focus,
 
   span {
     display: block;
+  }
+}
+
+@media #{$mobile} {
+  html, body {
+    overflow: inherit !important;
+  }
+  
+  main {
+    width: 100%;
+  }
+  
+  section {
+      height: auto !important;
   }
 }
 

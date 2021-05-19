@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useGlobalState } from '../hooks/useGlobalState';
+import { useMediaQueries } from '../hooks/useMediaQueries';
 import { useReset } from '../hooks/useReset';
 import { CustomBtn } from '../ui/components/customs/CustomBtn';
 import { ImageGallery } from '../ui/components/gallery/ImageGallery';
@@ -25,6 +26,8 @@ export const DashboardScreen = () => {
     }
   
     const [ visibility, setVisibility ] = useState(true);
+
+    const { isMobile } = useMediaQueries();
     
     return (
 
@@ -36,12 +39,14 @@ export const DashboardScreen = () => {
 
                     <div className="row">
                         <div className="col-sm col-md-3">
-        
-                            <HistoryComponent
-                                setParams={ setParams }
-                                setHistoryList={ setHistoryList }
-                                historyList={ historyList }
-                            />
+                            {
+                                !isMobile &&
+                                <HistoryComponent
+                                    setParams={ setParams }
+                                    setHistoryList={ setHistoryList }
+                                    historyList={ historyList }
+                                />
+                            }
                   
                         </div>
                         <div className="col-sm col-md-9">
@@ -49,7 +54,20 @@ export const DashboardScreen = () => {
                             <ImageGallery params={ params } visibility={ visibility } />
 
                         </div>
+
+                        
                     </div>
+                    {
+                            isMobile &&
+                            <div className="history-res">
+                                <HistoryComponent
+                                    setParams={ setParams }
+                                    setHistoryList={ setHistoryList }
+                                    historyList={ historyList }
+                                />
+                            </div>
+                            
+                        }
                 </div>
                 
                 <div className="col-sm col-md-4">

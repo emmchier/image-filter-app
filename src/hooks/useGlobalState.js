@@ -12,7 +12,7 @@ export const useGlobalState = () => {
         hue: 0, // filter color
         sat: 0, // saturation
         gam: 0, // gamma brigtness
-        fit: 'clip', // size effects
+        fit: 'crop', // size effects
         flip: '', // invert horizontal or vertical
         orient: 0, // rotation in 4 directions
         rot: 0, // rotation

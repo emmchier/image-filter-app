@@ -125,3 +125,9 @@ i {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: $primaryLightColor; 
 }
+
+@media #{$mobile}  {
+  ::-webkit-scrollbar-thumb {
+    display: none; 
+  }
+}

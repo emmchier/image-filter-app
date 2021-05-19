@@ -53,5 +53,33 @@
     }
 }
 
+@media #{$mobile} {
+
+    .history-header {
+        margin-top: 20px;
+    }
+
+    .history-res {
+        margin-bottom: 10px;
+    }
+
+    .history-content {
+        display: inline-block;
+        display: flex;
+        height: auto;
+    }
+
+    .item-history {
+        width: 100px;
+        color: $secondaryColor;
+        margin-bottom: 0 !important;
+        margin-right: 10px;
+        
+        
+    }
+}
+
+
+
 
 

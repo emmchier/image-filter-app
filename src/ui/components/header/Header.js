@@ -21,7 +21,7 @@ export const Header = ({ visibility, setVisibility }) => {
                 </div>
                 <div className="col-sm col-md-9">
                     <div className="row">
-                        <div className="col-sm col-md-6">
+                        <div className="col-md-6">
 
                             <CustomBtn 
                                 onClick={ ()=> setVisibility(true) }
@@ -34,7 +34,7 @@ export const Header = ({ visibility, setVisibility }) => {
                             />
 
                         </div>
-                        <div className="col-sm col-md-6">
+                        <div className="col-md-6">
 
                             <CustomBtn 
                                 onClick={ ()=> setVisibility(false) }

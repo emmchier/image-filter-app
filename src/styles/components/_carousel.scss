@@ -10,10 +10,6 @@
   
   .swiper-slide {
     background: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
@@ -68,6 +64,8 @@
     cursor: none !important;
   }
 
+  
+
   .swiper-button-prev {
     left: auto;
     right: 35px !important;
@@ -98,7 +96,8 @@
   }
 
   .sandbox-item-actions {
-  padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 
   .btn-action {
     margin-left: 10px !important;
@@ -126,5 +125,33 @@
 
   span {
     display: none;
+  }
+
+  .swiper-button-next, 
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  .image-item {
+    height: 40vh !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    justify-content: center;
+    display: block;
+  }
+
+  .btn-actions-res {
+
+    display: flex !important;
+
+    .btn-action {
+      box-shadow: none !important;
+      border: 1px solid $disableColor;
+      margin-left: 15px !important;
+
+      i {
+        font-size: 20px;
+      }
+    }
   }
 }

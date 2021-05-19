@@ -39,7 +39,7 @@ export const MenuSectionComponent = (props) => {
                 data-target={ `#${ collapseId }` } 
                 aria-expanded={ ariaExpanded } 
                 aria-controls={ collapseId }>
-                <h2 className="mb-0">{ headerName }</h2>
+                <h2 className="mb-0 alignX pushAside">{ headerName }</h2>
             </div>
             <div 
                 id={ collapseId } 

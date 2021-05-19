@@ -34,6 +34,12 @@
             h2 {
                 color: $secondaryColor;
                 font-size: $main_header_text !important;
+                width: auto;
+            }
+
+            i {
+                width: auto !important;
+                color: red !important;
             }
         } 
 
@@ -207,5 +213,14 @@ transform: translateY(-4px);
     &:focus {
         text-decoration: underline !important;
         background-color: $whiteColor !important;
+    }
+}
+
+@media #{$mobile} {
+    .dashboard__menu-options {
+        overflow-y: scroll !important;
+        height: 80vh !important;
+        padding-right: 3px;
+        margin-bottom: 30px !important;
     }
 }
